@@ -1,0 +1,204 @@
+1
+00:00:00,000 --> 00:00:03,180
+Parameters in Kotlin can have a default value.
+
+2
+00:00:03,180 --> 00:00:04,875
+This means, when you call the function,
+
+3
+00:00:04,875 --> 00:00:08,564
+you don't have to specify a value every time for those parameters.
+
+4
+00:00:08,564 --> 00:00:09,899
+If the value is missing,
+
+5
+00:00:09,900 --> 00:00:11,565
+the default value is used.
+
+6
+00:00:11,564 --> 00:00:16,905
+Let's define a function swim with an argument speed that has a default value of fast.
+
+7
+00:00:16,905 --> 00:00:19,830
+By default, the fish will swim fast.
+
+8
+00:00:19,829 --> 00:00:22,919
+If we call swim with no arguments like this,
+
+9
+00:00:22,920 --> 00:00:25,275
+the default, fast, will be used.
+
+10
+00:00:25,274 --> 00:00:28,589
+We can also call the function and specify the default, argument,
+
+11
+00:00:28,589 --> 00:00:33,269
+positionally, or we can specify the argument by name like this.
+
+12
+00:00:33,270 --> 00:00:35,925
+You can mix default and positional arguments.
+
+13
+00:00:35,924 --> 00:00:39,149
+For example, we can let the fish swim for a time,
+
+14
+00:00:39,149 --> 00:00:41,024
+which doesn't have a default value,
+
+15
+00:00:41,024 --> 00:00:44,460
+and a speed, that does have a default value.
+
+16
+00:00:44,460 --> 00:00:47,700
+Our product manager just walked by and
+
+17
+00:00:47,700 --> 00:00:52,365
+mentioned that we're going to need to implement the ability to change the water.
+
+18
+00:00:52,365 --> 00:00:54,585
+Reading through the requirements doc,
+
+19
+00:00:54,585 --> 00:00:56,070
+sometime in the future,
+
+20
+00:00:56,070 --> 00:00:59,250
+we're going to build a temperature and dirtiness sensor.
+
+21
+00:00:59,250 --> 00:01:04,579
+In the meantime, we can use default values to fill in for the missing sensors.
+
+22
+00:01:04,579 --> 00:01:05,909
+Here is the function,
+
+23
+00:01:05,909 --> 00:01:08,069
+which doesn't do anything yet.
+
+24
+00:01:08,069 --> 00:01:10,209
+Day is a string.
+
+25
+00:01:10,209 --> 00:01:14,304
+Temperature gets a default value of 22 Celsius.
+
+26
+00:01:14,305 --> 00:01:17,995
+And dirty has a default value of 20 percent,
+
+27
+00:01:17,995 --> 00:01:19,950
+which is pretty clean.
+
+28
+00:01:19,950 --> 00:01:23,234
+There are three ways in which we can call this function.
+
+29
+00:01:23,234 --> 00:01:27,000
+We can call the function with three arguments in the right order.
+
+30
+00:01:27,000 --> 00:01:28,625
+We can call the function with
+
+31
+00:01:28,625 --> 00:01:33,950
+only the required arguments and use the default values for temperature and dirty.
+
+32
+00:01:33,950 --> 00:01:40,350
+And we can set only one or any of the values by specifying the name of the argument.
+
+33
+00:01:40,349 --> 00:01:45,449
+This is often more readable when calling functions with large numbers of arguments.
+
+34
+00:01:45,450 --> 00:01:47,880
+You can define a function where
+
+35
+00:01:47,879 --> 00:01:51,974
+the default variables are listed first or mixed in with others,
+
+36
+00:01:51,974 --> 00:01:57,464
+but this easily leads to mistakes if you forget to list all arguments by name.
+
+37
+00:01:57,465 --> 00:01:59,460
+Calling should change water.
+
+38
+00:01:59,459 --> 00:02:02,849
+With just Monday, gives the compiler error.
+
+39
+00:02:02,849 --> 00:02:04,479
+So, you have to call it,
+
+40
+00:02:04,480 --> 00:02:07,245
+specifying that Monday is the day.
+
+41
+00:02:07,245 --> 00:02:10,740
+It is a best practice to put arguments without defaults
+
+42
+00:02:10,740 --> 00:02:14,240
+first and then the ones with the defaults afterwards.
+
+43
+00:02:14,240 --> 00:02:17,034
+Should change water needs to return something?
+
+44
+00:02:17,034 --> 00:02:20,645
+For now, let's just have it return true.
+
+45
+00:02:20,645 --> 00:02:26,380
+Finally, we go back to our feed the fish function and add a call to should change water.
+
+46
+00:02:26,379 --> 00:02:32,764
+This code says that if we should change the water on a given day,
+
+47
+00:02:32,764 --> 00:02:34,864
+print, "Change the water today".
+
+48
+00:02:34,865 --> 00:02:36,665
+When we run the program,
+
+49
+00:02:36,664 --> 00:02:39,650
+we see "Change the water today" every time,
+
+50
+00:02:39,650 --> 00:02:42,655
+since we haven't implemented any logic for that,
+
+51
+00:02:42,655 --> 00:02:45,830
+which brings us to the next practice.
+

@@ -1,0 +1,420 @@
+1
+00:00:00,000 --> 00:00:01,665
+So, for this screencast,
+
+2
+00:00:01,665 --> 00:00:04,620
+I'm going to type the code into the interpreter and you can see
+
+3
+00:00:04,620 --> 00:00:08,099
+exactly what it does and then I'll explain it as we go.
+
+4
+00:00:08,099 --> 00:00:09,974
+We'll start intelliJ.
+
+5
+00:00:09,974 --> 00:00:14,879
+Type along if you want and pause the video if you get out of breath.
+
+6
+00:00:14,880 --> 00:00:17,175
+Or, you can just wait and watch,
+
+7
+00:00:17,175 --> 00:00:19,785
+and then practice in the practice section.
+
+8
+00:00:19,785 --> 00:00:22,050
+You don't have to memorize all of this on the go
+
+9
+00:00:22,050 --> 00:00:24,824
+because at the end we'll give you a Kotlin cheat sheet.
+
+10
+00:00:24,824 --> 00:00:27,300
+So first, let's get operators out of the way,
+
+11
+00:00:27,300 --> 00:00:30,780
+plus, minus, times and division.
+
+12
+00:00:30,780 --> 00:00:32,620
+In your typewriter, type
+
+13
+00:00:32,619 --> 00:00:38,094
+one plus one command enter for one fish plus fun fish to the aquarium.
+
+14
+00:00:38,094 --> 00:00:41,159
+And you get 53 fish.
+
+15
+00:00:41,159 --> 00:00:45,474
+Sadly, three of the baby fish are eaten by sharks.
+
+16
+00:00:45,475 --> 00:00:48,070
+Because the fish keep fighting over food,
+
+17
+00:00:48,070 --> 00:00:50,755
+you want to divide the fish into batches of 10.
+
+18
+00:00:50,755 --> 00:00:54,395
+Dividing an integer always returns an integer.
+
+19
+00:00:54,395 --> 00:00:57,105
+So, one divided by two return zero,
+
+20
+00:00:57,104 --> 00:01:01,694
+and 1.0 divided by 2.0 returns to 0.5.
+
+21
+00:01:01,695 --> 00:01:07,144
+But your fish keep multiplying and after six months you have a lot of fish.
+
+22
+00:01:07,144 --> 00:01:08,795
+We'll cover it a bit later,
+
+23
+00:01:08,795 --> 00:01:11,560
+but Kotlin let's you override the basic operators.
+
+24
+00:01:11,560 --> 00:01:13,810
+You're not just stuck adding one's and two's.
+
+25
+00:01:13,810 --> 00:01:15,189
+You can define your own fish,
+
+26
+00:01:15,189 --> 00:01:17,590
+and give them the ability to multiply.
+
+27
+00:01:17,590 --> 00:01:20,495
+Another edition about addition,
+
+28
+00:01:20,495 --> 00:01:22,594
+Kotlin keeps numbers as primitives,
+
+29
+00:01:22,594 --> 00:01:24,879
+the same number types your CPU uses.
+
+30
+00:01:24,879 --> 00:01:28,299
+But, it'll let you call methods on them like they're objects.
+
+31
+00:01:28,299 --> 00:01:32,890
+This means you can call methods on the number one like one times two.
+
+32
+00:01:32,890 --> 00:01:35,435
+There's a few things to note about basic types.
+
+33
+00:01:35,435 --> 00:01:38,159
+While you can use numbers as if they were objects,
+
+34
+00:01:38,159 --> 00:01:41,099
+Kotlin also supports object wrappers for numbers.
+
+35
+00:01:41,099 --> 00:01:44,759
+All the numerical types in Kotlin have a supertype called number.
+
+36
+00:01:44,760 --> 00:01:48,300
+And if you try to store the value one in a variable of type number,
+
+37
+00:01:48,299 --> 00:01:50,700
+it'll need to be placed in an object wrapper,
+
+38
+00:01:50,700 --> 00:01:52,590
+this is called boxing.
+
+39
+00:01:52,590 --> 00:01:56,475
+And it will be implicitly done whenever it is needed in your program.
+
+40
+00:01:56,474 --> 00:01:58,919
+Importantly, as a developer,
+
+41
+00:01:58,920 --> 00:02:03,825
+you can avoid creating these objects wrappers by not storing numbers in objects.
+
+42
+00:02:03,825 --> 00:02:07,109
+To write useful code you need to be able to store values.
+
+43
+00:02:07,109 --> 00:02:09,044
+To make your fish more permanent,
+
+44
+00:02:09,044 --> 00:02:11,159
+you can store them in variables.
+
+45
+00:02:11,159 --> 00:02:16,259
+There are two types of variables in Kotlin; changeable and unchangeable.
+
+46
+00:02:16,259 --> 00:02:19,469
+With val, you can assign a value once.
+
+47
+00:02:19,469 --> 00:02:23,460
+If you try to assign something again, you get an error.
+
+48
+00:02:23,460 --> 00:02:25,409
+With var you can assign a value,
+
+49
+00:02:25,409 --> 00:02:26,849
+and then you can change it.
+
+50
+00:02:26,849 --> 00:02:29,639
+Note that in all of these the type is inferred,
+
+51
+00:02:29,639 --> 00:02:32,924
+which means the compiler can figure out the type from the context.
+
+52
+00:02:32,925 --> 00:02:34,650
+Even so the type is inferred,
+
+53
+00:02:34,650 --> 00:02:37,110
+it becomes fixed at compile time,
+
+54
+00:02:37,110 --> 00:02:39,480
+and you can not change the type of a variable in
+
+55
+00:02:39,479 --> 00:02:42,314
+Kotlin once it's type has been determined.
+
+56
+00:02:42,314 --> 00:02:48,014
+Of course, you can use variables in operations and there is no punctuation at the end.
+
+57
+00:02:48,014 --> 00:02:49,869
+On the topic of implicit.
+
+58
+00:02:49,870 --> 00:02:53,920
+Number types won't implicitly convert to other types so you can't assign
+
+59
+00:02:53,919 --> 00:02:58,734
+a short value to a long variable or a byte to an int.
+
+60
+00:02:58,735 --> 00:03:00,190
+Kotlin does this because
+
+61
+00:03:00,189 --> 00:03:04,129
+implicit numerical conversion is a common source of errors in programs.
+
+62
+00:03:04,129 --> 00:03:08,000
+You can always assign them by casting like this.
+
+63
+00:03:09,919 --> 00:03:13,239
+You may have seen syntax like this before,
+
+64
+00:03:13,240 --> 00:03:15,409
+Kotlin supports underscores in numbers.
+
+65
+00:03:15,409 --> 00:03:19,645
+So you can specify long constants in a format that makes sense to you.
+
+66
+00:03:19,645 --> 00:03:22,235
+The type is inferred by Kotlin.
+
+67
+00:03:22,235 --> 00:03:25,815
+Okay. Let's do something that's really Kotlin.
+
+68
+00:03:25,814 --> 00:03:31,764
+Nullability. Earlier, we talked about how Kotlin helps avoid null pointer exceptions.
+
+69
+00:03:31,764 --> 00:03:34,639
+When you declare a variables type explicitly,
+
+70
+00:03:34,639 --> 00:03:37,779
+by default, it's value can not be null.
+
+71
+00:03:37,780 --> 00:03:42,650
+Use the question mark operator to indicate that a variable can be null.
+
+72
+00:03:42,650 --> 00:03:46,300
+When you have complex data types such as a list,
+
+73
+00:03:46,300 --> 00:03:48,219
+you can allow for the list to be null,
+
+74
+00:03:48,219 --> 00:03:49,615
+but if it's not null,
+
+75
+00:03:49,615 --> 00:03:51,325
+it's elements cannot be null,
+
+76
+00:03:51,324 --> 00:03:55,429
+or you can allow both the list or the elements to be null.
+
+77
+00:03:55,430 --> 00:03:58,590
+If you really love no pointer exceptions,
+
+78
+00:03:58,590 --> 00:04:00,030
+Kotlin will let you keep them.
+
+79
+00:04:00,030 --> 00:04:05,129
+The not know assertion operator can force your way past a nullable type in Kotlin.
+
+80
+00:04:05,129 --> 00:04:08,430
+Though, it will still throw an exception when it's null.
+
+81
+00:04:08,430 --> 00:04:12,705
+In programming slang, the exclamation mark is often called, Bang.
+
+82
+00:04:12,705 --> 00:04:14,940
+See the Wikipedia article in the notes.
+
+83
+00:04:14,939 --> 00:04:20,180
+It's a lot easier to say double bang then not null whatever.
+
+84
+00:04:20,180 --> 00:04:23,819
+It's generally a bad idea to use the double bang operator and
+
+85
+00:04:23,819 --> 00:04:28,014
+that's why they've made you type two exclamation marks instead of one.
+
+86
+00:04:28,014 --> 00:04:31,979
+You can do some cool null testing with the question mark operator,
+
+87
+00:04:31,980 --> 00:04:34,770
+saving you the pain of many if else statements.
+
+88
+00:04:34,769 --> 00:04:37,680
+For example, you can check whether an object or
+
+89
+00:04:37,680 --> 00:04:41,550
+variable is non null before accessing one of its methods.
+
+90
+00:04:41,550 --> 00:04:45,615
+You can and will only give fish treats if they are tweets available.
+
+91
+00:04:45,615 --> 00:04:48,465
+You can also chain null tests in an expression,
+
+92
+00:04:48,464 --> 00:04:50,294
+like this return statement,
+
+93
+00:04:50,295 --> 00:04:52,545
+if fish food treats is not null,
+
+94
+00:04:52,545 --> 00:04:56,310
+use a treat and return a new value and otherwise,
+
+95
+00:04:56,310 --> 00:04:59,670
+return the value after the colon, which is zero.
+
+96
+00:04:59,670 --> 00:05:01,620
+So, in this expression,
+
+97
+00:05:01,620 --> 00:05:04,274
+we are checking whether fish fruit treats is null.
+
+98
+00:05:04,274 --> 00:05:08,339
+If it is not, we remove a treat and return a new value.
+
+99
+00:05:08,339 --> 00:05:10,500
+If fish food treats is null,
+
+100
+00:05:10,500 --> 00:05:16,605
+we stop evaluation, so that the decrease method is not called on a null object.
+
+101
+00:05:16,605 --> 00:05:20,475
+And we return the alternative value after the colon,
+
+102
+00:05:20,475 --> 00:05:22,875
+which in this case is zero.
+
+103
+00:05:22,875 --> 00:05:25,785
+Look at the question mark colon operator.
+
+104
+00:05:25,785 --> 00:05:27,990
+It's called the Elvis operator,
+
+105
+00:05:27,990 --> 00:05:33,519
+because it's like a smiley on its side with the way Elvis Presley style his hair.
+

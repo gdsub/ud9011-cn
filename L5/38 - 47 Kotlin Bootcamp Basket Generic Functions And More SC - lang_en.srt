@@ -1,0 +1,368 @@
+1
+00:00:00,000 --> 00:00:03,359
+Sometimes, we want to make a generic function.
+
+2
+00:00:03,359 --> 00:00:06,029
+Typically, this is a really good idea whenever
+
+3
+00:00:06,030 --> 00:00:10,289
+the function takes an argument of a class that has a generic.
+
+4
+00:00:10,289 --> 00:00:12,994
+Let's make a function isWaterClean.
+
+5
+00:00:12,994 --> 00:00:17,939
+It takes an aquarium and we need to specify the generic type of the parameter.
+
+6
+00:00:17,940 --> 00:00:20,685
+One option is to use water supply,
+
+7
+00:00:20,684 --> 00:00:25,964
+but this means aquarium must have an out type parameter for this to be called.
+
+8
+00:00:25,964 --> 00:00:28,254
+What can we do to make this better?
+
+9
+00:00:28,254 --> 00:00:30,660
+We can make the function generic.
+
+10
+00:00:30,660 --> 00:00:33,149
+You can add a generic to a function by
+
+11
+00:00:33,149 --> 00:00:36,314
+putting angle brackets right after the keyword, "fun".
+
+12
+00:00:36,314 --> 00:00:41,884
+Here, we're saying isWaterCleaner is a function with a generic argument, "T".
+
+13
+00:00:41,884 --> 00:00:44,854
+T is constrained by water supply.
+
+14
+00:00:44,854 --> 00:00:47,044
+Once we have the type T,
+
+15
+00:00:47,045 --> 00:00:49,734
+we can use as the generic to aquarium.
+
+16
+00:00:49,734 --> 00:00:52,000
+Another way to say that is,
+
+17
+00:00:52,000 --> 00:00:55,384
+T is a type parameter to isWaterClean that is
+
+18
+00:00:55,384 --> 00:00:59,884
+being used to specify the generic type of the aquarium.
+
+19
+00:00:59,884 --> 00:01:02,030
+This pattern is really common,
+
+20
+00:01:02,030 --> 00:01:05,370
+and it's a good idea to take a moment to work through this.
+
+21
+00:01:05,370 --> 00:01:09,090
+We can call this function by specifying the type in
+
+22
+00:01:09,090 --> 00:01:13,469
+angle brackets right after the function name and before the parenthesis.
+
+23
+00:01:13,469 --> 00:01:15,793
+And because of type inference,
+
+24
+00:01:15,793 --> 00:01:18,810
+we don't need to explicitly use the angle brackets.
+
+25
+00:01:18,810 --> 00:01:22,079
+The compiler figures it out from the type aquarium.
+
+26
+00:01:22,079 --> 00:01:25,769
+You can use generic functions for methods too,
+
+27
+00:01:25,769 --> 00:01:28,905
+even in classes that have their own generic type.
+
+28
+00:01:28,905 --> 00:01:34,135
+Let's add one to aquarium that let's us check if it has a type of water supply.
+
+29
+00:01:34,135 --> 00:01:38,160
+Here, we're declaring a function hasWaterSupply of type that has
+
+30
+00:01:38,159 --> 00:01:43,019
+a generic parameter R. R is bound by WaterSupply.
+
+31
+00:01:43,019 --> 00:01:46,289
+In the body, we're going to return "true" if
+
+32
+00:01:46,290 --> 00:01:50,315
+the water supply parameter is of type R. Remember,
+
+33
+00:01:50,314 --> 00:01:52,250
+WaterSupply is of type T,
+
+34
+00:01:52,250 --> 00:01:55,905
+and this is really saying return true if T is
+
+35
+00:01:55,905 --> 00:02:01,250
+R. We have to do one more thing to make this function work.
+
+36
+00:02:01,250 --> 00:02:05,420
+In order to use R in isCheck like this,
+
+37
+00:02:05,420 --> 00:02:08,640
+we have to tell Kotlin that it's reified.
+
+38
+00:02:08,639 --> 00:02:11,489
+Reified just means real.
+
+39
+00:02:11,490 --> 00:02:13,890
+A reified type is a real type.
+
+40
+00:02:13,889 --> 00:02:15,769
+To make a type reified,
+
+41
+00:02:15,770 --> 00:02:19,275
+use the keyword "inline" before "fun" and the keyword
+
+42
+00:02:19,275 --> 00:02:22,935
+"reified" before R. When we do that,
+
+43
+00:02:22,935 --> 00:02:25,844
+we're saying, declare a type parameter R,
+
+44
+00:02:25,844 --> 00:02:27,729
+but make it a real type.
+
+45
+00:02:27,729 --> 00:02:31,439
+Kotlin does this by inlining the function to the call.
+
+46
+00:02:31,439 --> 00:02:33,719
+Anytime you call this function,
+
+47
+00:02:33,719 --> 00:02:36,810
+it will automatically be dropped in place of the call.
+
+48
+00:02:36,810 --> 00:02:42,270
+The compiler then figures out what type R would have been and uses the real type.
+
+49
+00:02:42,270 --> 00:02:44,659
+Once a type is a reified or real,
+
+50
+00:02:44,659 --> 00:02:46,859
+you can use it just like a normal type.
+
+51
+00:02:46,860 --> 00:02:49,760
+That's because it is a real type after inlining.
+
+52
+00:02:49,759 --> 00:02:53,579
+That means, you can do isChecks using the type.
+
+53
+00:02:53,580 --> 00:02:55,750
+If you don't use reified here,
+
+54
+00:02:55,750 --> 00:02:59,840
+the type won't be real enough for Kotlin to allow isChecks,
+
+55
+00:02:59,840 --> 00:03:05,090
+and that's because non reified types are only available at compile time,
+
+56
+00:03:05,090 --> 00:03:08,354
+but can't be used at runtime by your program.
+
+57
+00:03:08,354 --> 00:03:10,844
+Just like calling generic functions,
+
+58
+00:03:10,844 --> 00:03:14,930
+call generic methods by using angle brackets after the function name.
+
+59
+00:03:14,930 --> 00:03:19,670
+Here we're saying, call "hasWaterSupplyOfType" on aquarium.
+
+60
+00:03:19,669 --> 00:03:24,354
+Pass TapWater as the type parameter for R. Of course,
+
+61
+00:03:24,354 --> 00:03:27,969
+this returns true since our aquarium does have TapWater.
+
+62
+00:03:27,969 --> 00:03:31,560
+We can use reified types for regular functions too,
+
+63
+00:03:31,560 --> 00:03:34,960
+not just members and even extension functions.
+
+64
+00:03:34,960 --> 00:03:40,610
+Here, we're defining an extension function on water supply called, isTypeOf.
+
+65
+00:03:40,610 --> 00:03:46,530
+It has a reified or real type T. Just like hasWaterSupplyOfType,
+
+66
+00:03:46,530 --> 00:03:50,400
+we'll do an isCheck to use the reified type.
+
+67
+00:03:50,400 --> 00:03:54,325
+Sometimes, when we take a generic class as an argument,
+
+68
+00:03:54,324 --> 00:03:57,250
+we don't actually care what its generic type is.
+
+69
+00:03:57,250 --> 00:03:59,574
+We can use star protection to say,
+
+70
+00:03:59,574 --> 00:04:03,149
+"I'll take any version of that generic type."
+
+71
+00:04:03,150 --> 00:04:07,224
+Let's move hasWaterSupplyOfType to be an extension function.
+
+72
+00:04:07,224 --> 00:04:10,634
+It isn't really part of the core API of aquarium,
+
+73
+00:04:10,634 --> 00:04:12,764
+so, it makes sense.
+
+74
+00:04:12,764 --> 00:04:17,829
+We don't really care what type of aquarium hasWaterSupplyOfType is called on.
+
+75
+00:04:17,829 --> 00:04:23,370
+So, we can say that simply by putting an asterisk or star as the generic.
+
+76
+00:04:23,370 --> 00:04:28,889
+This says, I'll take any aquarium no matter what the generic type is.
+
+77
+00:04:28,889 --> 00:04:34,435
+This is a convenient way to skip specifying a type when you don't really need to care.
+
+78
+00:04:34,435 --> 00:04:38,735
+Kotlin will make sure you don't do anything unsafe too.
+
+79
+00:04:38,735 --> 00:04:43,540
+In and out, generic functions reified, types, star projections.
+
+80
+00:04:43,540 --> 00:04:44,950
+Only one more topic,
+
+81
+00:04:44,949 --> 00:04:48,925
+then you'll know everything there is to know about Kotlin generics.
+
+82
+00:04:48,925 --> 00:04:53,754
+Type erasure. It'll come up in some error messages that the compiler produces,
+
+83
+00:04:53,754 --> 00:04:55,839
+so, it's worth learning about.
+
+84
+00:04:55,839 --> 00:05:00,174
+All generic types are only used at compile time by Kotlin.
+
+85
+00:05:00,175 --> 00:05:04,064
+This let's the compiler makes sure that you're doing everything safely.
+
+86
+00:05:04,064 --> 00:05:09,295
+However, at runtime, all the generic types are erased.
+
+87
+00:05:09,295 --> 00:05:11,750
+It turns out, the compiler can create
+
+88
+00:05:11,750 --> 00:05:16,259
+completely correct code without keeping the generic types to runtime,
+
+89
+00:05:16,259 --> 00:05:20,339
+but it does mean that sometimes you do something like
+
+90
+00:05:20,339 --> 00:05:24,949
+isChecks on a generic type that the compiler can't support.
+
+91
+00:05:24,949 --> 00:05:29,180
+That's why Kotlin added reified or real types.
+
+92
+00:05:29,180 --> 00:05:34,470
+And now, you really do know everything there is to know about Kotlin generics.
+

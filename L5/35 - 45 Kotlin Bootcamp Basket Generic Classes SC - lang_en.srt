@@ -1,0 +1,520 @@
+1
+00:00:00,000 --> 00:00:04,139
+Kotlin like many languages has generic types.
+
+2
+00:00:04,139 --> 00:00:07,979
+A generic type allows you to make a class generic.
+
+3
+00:00:07,980 --> 00:00:10,410
+You can think of it like this,
+
+4
+00:00:10,410 --> 00:00:13,964
+if we wanted to define a list class in Kotlin,
+
+5
+00:00:13,964 --> 00:00:16,815
+we could make one for each data type.
+
+6
+00:00:16,815 --> 00:00:23,595
+Here, we're starting to declare a list that can hold integers, N1 for shorts.
+
+7
+00:00:23,594 --> 00:00:29,054
+Without generics, we need to implement a new copy of list for each type,
+
+8
+00:00:29,054 --> 00:00:31,274
+another one for double,
+
+9
+00:00:31,274 --> 00:00:35,009
+one for string and one more for fish.
+
+10
+00:00:35,009 --> 00:00:40,994
+With generics, we can make the list generic so it can hold any type of object.
+
+11
+00:00:40,994 --> 00:00:46,274
+It's like you make the type a wildcard that will fit many types.
+
+12
+00:00:46,274 --> 00:00:51,119
+To do that, we add a generic type to our list.
+
+13
+00:00:51,119 --> 00:00:53,954
+The generic type is T,
+
+14
+00:00:53,954 --> 00:00:57,674
+but you can use any letter or even a longer name.
+
+15
+00:00:57,674 --> 00:01:00,750
+This is just a convention for Type.
+
+16
+00:01:00,750 --> 00:01:05,935
+You put it inside angle brackets after the class name.
+
+17
+00:01:05,935 --> 00:01:11,725
+We pronounce this list of T. We can then use T
+
+18
+00:01:11,724 --> 00:01:17,734
+inside the MyList class as if it was a regular type inside the class.
+
+19
+00:01:17,734 --> 00:01:23,159
+In this example, the return type for get and the parameter type for
+
+20
+00:01:23,159 --> 00:01:28,334
+addItem are both T. To use a generic class,
+
+21
+00:01:28,334 --> 00:01:34,184
+you specify the type you want to use in angle brackets when you instantiate the class.
+
+22
+00:01:34,185 --> 00:01:40,510
+Here, we are making a MyList of string and MyList of fish.
+
+23
+00:01:40,510 --> 00:01:43,130
+Because lists are so common,
+
+24
+00:01:43,129 --> 00:01:45,789
+they are built into Kotlin.
+
+25
+00:01:45,790 --> 00:01:48,490
+To talk more about generics,
+
+26
+00:01:48,489 --> 00:01:51,625
+let's add some functionality to our Aquarium.
+
+27
+00:01:51,625 --> 00:01:53,980
+In this example, we're going to modify
+
+28
+00:01:53,980 --> 00:01:58,284
+the Aquarium class to support different types of water supplies.
+
+29
+00:01:58,284 --> 00:02:00,594
+To keep the example simple,
+
+30
+00:02:00,594 --> 00:02:05,920
+let's create a new package under Aquarium and call it generics.
+
+31
+00:02:05,920 --> 00:02:07,890
+In the generics package,
+
+32
+00:02:07,890 --> 00:02:10,425
+create a new Aquarium file.
+
+33
+00:02:10,425 --> 00:02:15,965
+This allows us to redefine stuff using the same names without conflicts,
+
+34
+00:02:15,965 --> 00:02:18,580
+so all our code goes into this file.
+
+35
+00:02:18,580 --> 00:02:21,190
+Files don't have to have the same name as
+
+36
+00:02:21,189 --> 00:02:25,669
+their class and you can have multiple classes in a file.
+
+37
+00:02:25,669 --> 00:02:29,199
+To get started, let's make a type hierarchy.
+
+38
+00:02:29,199 --> 00:02:32,314
+This is stuff we covered in the last lesson,
+
+39
+00:02:32,314 --> 00:02:34,234
+but here is a review.
+
+40
+00:02:34,235 --> 00:02:39,540
+WaterSupply is an open class so that we can subclass from it.
+
+41
+00:02:39,539 --> 00:02:42,204
+It has a var parameter,
+
+42
+00:02:42,205 --> 00:02:46,180
+needsProcessed that's a Boolean.
+
+43
+00:02:46,180 --> 00:02:50,980
+The needsProcessed parameter, automatically creates a mutable property on
+
+44
+00:02:50,979 --> 00:02:56,840
+WaterSupply called needsProcessed along with a getter and setter.
+
+45
+00:02:56,840 --> 00:03:00,825
+The subclass TapWater extends WaterSupply.
+
+46
+00:03:00,824 --> 00:03:05,780
+It passes true for needsProcessed because our tap water contains
+
+47
+00:03:05,780 --> 00:03:11,305
+additives which are bad for fish and thus needs to be processed.
+
+48
+00:03:11,305 --> 00:03:16,245
+TapWater defines a function called addChemicalCleaners.
+
+49
+00:03:16,245 --> 00:03:18,805
+After we nominally clean the water,
+
+50
+00:03:18,805 --> 00:03:25,254
+it sets needsProcessed to false because now we do not need to process the water anymore.
+
+51
+00:03:25,254 --> 00:03:29,394
+We can set needsProcessed from WaterSupply in here
+
+52
+00:03:29,395 --> 00:03:34,735
+because it's public by default and so available to child classes.
+
+53
+00:03:34,735 --> 00:03:38,410
+We create two more subclasses of WaterSupply,
+
+54
+00:03:38,409 --> 00:03:42,150
+fish store water, and lake water.
+
+55
+00:03:42,150 --> 00:03:45,670
+Fish store water doesn't need to be processed
+
+56
+00:03:45,669 --> 00:03:49,884
+so it passes false to the WaterSupply constructor.
+
+57
+00:03:49,884 --> 00:03:53,824
+Lake water needs to be filtered with filter,
+
+58
+00:03:53,824 --> 00:03:57,194
+but then it doesn't need to be processed any more.
+
+59
+00:03:57,194 --> 00:04:00,359
+So, needsProcessed can be false.
+
+60
+00:04:00,360 --> 00:04:05,190
+I know, that code is very similar to TapWater,
+
+61
+00:04:05,189 --> 00:04:06,810
+but we'll need it later.
+
+62
+00:04:06,810 --> 00:04:09,750
+If any of that was a surprise to you,
+
+63
+00:04:09,750 --> 00:04:14,925
+hop back to the previous lesson and review inheritance in Kotlin.
+
+64
+00:04:14,925 --> 00:04:18,240
+Now that we have some types to work with,
+
+65
+00:04:18,240 --> 00:04:20,485
+let's make a generic Aquarium.
+
+66
+00:04:20,485 --> 00:04:23,139
+We define an Aquarium class,
+
+67
+00:04:23,139 --> 00:04:26,334
+put T in brackets after the class name.
+
+68
+00:04:26,334 --> 00:04:29,649
+Now, T is available to the Aquarium class.
+
+69
+00:04:29,649 --> 00:04:33,699
+We typically say generic types as type T,
+
+70
+00:04:33,699 --> 00:04:37,534
+that is type followed by the name of the generic.
+
+71
+00:04:37,535 --> 00:04:46,495
+Now, let's add an immutable property WaterSupply of type T to Aquarium.
+
+72
+00:04:46,495 --> 00:04:51,129
+Now we can make a new Aquarium and pass it a water supply.
+
+73
+00:04:51,129 --> 00:04:57,459
+We instantiate Aquarium at angle brackets with the type
+
+74
+00:04:57,459 --> 00:05:03,884
+right after the class name and then, like normal parentheses.
+
+75
+00:05:03,884 --> 00:05:07,344
+Since this is an Aquarium of TapWater,
+
+76
+00:05:07,345 --> 00:05:13,080
+we can pass a TapWater instance as the value for the WaterSupply parameter.
+
+77
+00:05:13,079 --> 00:05:19,019
+Now, we can access WaterSupply and because it's of type TapWater,
+
+78
+00:05:19,019 --> 00:05:22,544
+we can go ahead and call addChemicalCleaners,
+
+79
+00:05:22,545 --> 00:05:24,890
+without doing any casts.
+
+80
+00:05:24,889 --> 00:05:27,584
+Kotlin does have type inference,
+
+81
+00:05:27,584 --> 00:05:32,723
+so there's no reason to say TapWater twice when we create the instance.
+
+82
+00:05:32,723 --> 00:05:36,685
+The type can be inferred by the arguments to Aquarium.
+
+83
+00:05:36,685 --> 00:05:41,365
+So, if we remove the angle brackets and what's between them,
+
+84
+00:05:41,365 --> 00:05:44,814
+we'll still make an Aquarium of type TapWater.
+
+85
+00:05:44,814 --> 00:05:50,019
+Let's try one more example and pass a string to Aquarium.
+
+86
+00:05:51,420 --> 00:05:53,750
+This doesn't look right.
+
+87
+00:05:53,750 --> 00:05:57,639
+I'm able to pass a string in as a water supply.
+
+88
+00:05:57,639 --> 00:06:01,435
+This is because type T doesn't have any bounds.
+
+89
+00:06:01,435 --> 00:06:04,600
+So, it can actually be set to any type,
+
+90
+00:06:04,600 --> 00:06:06,879
+that could be a problem.
+
+91
+00:06:06,879 --> 00:06:13,240
+Another unexpected example is passing in nulls this also works.
+
+92
+00:06:13,240 --> 00:06:17,150
+I didn't really want to let WaterSupply be null.
+
+93
+00:06:17,149 --> 00:06:22,199
+Why is Kotlin even letting me pass null as it's of type T,
+
+94
+00:06:22,199 --> 00:06:24,599
+not T question mark?
+
+95
+00:06:24,600 --> 00:06:29,800
+Well, it turns out that by default T stands for the nullable any type,
+
+96
+00:06:29,800 --> 00:06:32,425
+the type at the top of the type hierarchy.
+
+97
+00:06:32,425 --> 00:06:38,050
+We can change Aquarium in longhand and spell it out as it is like so.
+
+98
+00:06:38,050 --> 00:06:43,389
+Now, to ensure that our parameter must be nonnull,
+
+99
+00:06:43,389 --> 00:06:45,699
+but can still be any type,
+
+100
+00:06:45,699 --> 00:06:49,644
+we remove the question mark and just say any.
+
+101
+00:06:49,644 --> 00:06:52,709
+This makes it impossible to pass null,
+
+102
+00:06:52,709 --> 00:06:55,319
+and we now get an error down here,
+
+103
+00:06:55,319 --> 00:06:59,279
+but we really want to ensure our type is a water supply.
+
+104
+00:06:59,279 --> 00:07:00,914
+As it turns out,
+
+105
+00:07:00,915 --> 00:07:04,045
+we can be as specific as we want with
+
+106
+00:07:04,045 --> 00:07:11,685
+the generic constraint and replace any with the top of any type hierarchy we want to use.
+
+107
+00:07:11,685 --> 00:07:16,375
+Here we are saying T must be a water supply.
+
+108
+00:07:16,375 --> 00:07:22,560
+Now, we don't have to worry about someone passing in an oil barrel instead,
+
+109
+00:07:22,560 --> 00:07:25,504
+which would not be so good for our fish.
+
+110
+00:07:25,504 --> 00:07:27,384
+We can create a method,
+
+111
+00:07:27,384 --> 00:07:33,120
+add water in Aquarium that adds water to the tank from the water supply.
+
+112
+00:07:33,120 --> 00:07:37,220
+There are a few cool things packed into this function.
+
+113
+00:07:37,220 --> 00:07:40,925
+Check is a standard library function in Kotlin
+
+114
+00:07:40,925 --> 00:07:45,254
+that's really convenient for checking the state of your classes.
+
+115
+00:07:45,254 --> 00:07:52,699
+It acts as an assertion and it will throw an illegal exception if its argument is false.
+
+116
+00:07:52,699 --> 00:07:58,384
+This reads like, if the water supply does not need to be processed,
+
+117
+00:07:58,384 --> 00:08:01,029
+go on to the next statement.
+
+118
+00:08:01,029 --> 00:08:06,519
+Otherwise, throw an exception with the provided error message.
+
+119
+00:08:06,519 --> 00:08:14,049
+You don't need parenthesis because the dot has precedence over the exclamation mark.
+
+120
+00:08:14,050 --> 00:08:17,980
+Note that we can always access needsProcessed on
+
+121
+00:08:17,980 --> 00:08:24,305
+WaterSupply because T has a generic constraint of WaterSupply.
+
+122
+00:08:24,305 --> 00:08:28,660
+We can now make a function that creates an Aquarium using
+
+123
+00:08:28,660 --> 00:08:33,819
+lake water as to supply and run it and we get an exception.
+
+124
+00:08:33,818 --> 00:08:39,235
+So, we need to filter the water before we add it, let's do that.
+
+125
+00:08:39,235 --> 00:08:43,620
+And we can't make an Aquarium of string anymore,
+
+126
+00:08:43,620 --> 00:08:47,534
+it will give us a compiler error because string is not
+
+127
+00:08:47,534 --> 00:08:52,949
+a water supply and that's the basics of generics.
+
+128
+00:08:52,950 --> 00:08:58,155
+There's actually a lot more to generics that we're about to cover,
+
+129
+00:08:58,154 --> 00:09:01,350
+but this is the most important concept.
+
+130
+00:09:01,350 --> 00:09:07,399
+How to declare a generic class with an upper bound and use it.
+

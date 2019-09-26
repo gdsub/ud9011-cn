@@ -1,0 +1,208 @@
+1
+00:00:00,000 --> 00:00:06,044
+Filters are another control flow construct you can use from the standard library,
+
+2
+00:00:06,044 --> 00:00:08,410
+and you can do a lot of cool stuff with them.
+
+3
+00:00:08,410 --> 00:00:12,765
+We are just going to use a filter to pick some aquarium decorations.
+
+4
+00:00:12,765 --> 00:00:15,130
+Let's open ripple for this.
+
+5
+00:00:15,130 --> 00:00:19,679
+Ripple is very handy when you want to quickly try out some code snippet.
+
+6
+00:00:19,679 --> 00:00:22,609
+Say, we have a list of declarations.
+
+7
+00:00:22,609 --> 00:00:26,655
+To print all the decorations that start with the letter P,
+
+8
+00:00:26,655 --> 00:00:30,030
+we can filter the decorations and return a list
+
+9
+00:00:30,030 --> 00:00:33,300
+of the list elements that match the condition under filter.
+
+10
+00:00:33,299 --> 00:00:36,824
+To do this, we will call filter on the object.
+
+11
+00:00:36,825 --> 00:00:39,210
+Let's first see how a filter works.
+
+12
+00:00:39,210 --> 00:00:44,875
+Filter will test every decoration against its condition and return a Boolean.
+
+13
+00:00:44,875 --> 00:00:47,715
+So, if we return true,
+
+14
+00:00:47,715 --> 00:00:49,665
+all the elements get printed.
+
+15
+00:00:49,664 --> 00:00:53,339
+Inside the filter, you have the code that does the filtering.
+
+16
+00:00:53,340 --> 00:00:56,760
+It's in curly braces because we are evaluating
+
+17
+00:00:56,759 --> 00:01:00,449
+an expression for every element in decorations.
+
+18
+00:01:00,450 --> 00:01:05,430
+It refers to each element in the list on which we are calling the filter.
+
+19
+00:01:05,430 --> 00:01:13,965
+And we are testing whether the first character at position zero is equal to P. In Kotlin,
+
+20
+00:01:13,965 --> 00:01:18,870
+single quotes designate characters and double-quotes strings,
+
+21
+00:01:18,870 --> 00:01:22,725
+and they are not interchangeable like in some other languages.
+
+22
+00:01:22,724 --> 00:01:26,744
+Filters are powerful and we'll get more into filters later.
+
+23
+00:01:26,745 --> 00:01:30,734
+Filter, is a standard library function on list in Kotlin.
+
+24
+00:01:30,734 --> 00:01:33,950
+If you have some experience with filter in other languages,
+
+25
+00:01:33,950 --> 00:01:36,500
+you'll be wondering if it's eager or lazy,
+
+26
+00:01:36,500 --> 00:01:38,075
+and the answer is both.
+
+27
+00:01:38,075 --> 00:01:42,240
+I'm going to define a new function here example to explore this further.
+
+28
+00:01:42,239 --> 00:01:45,269
+By default, filter analyst is eager.
+
+29
+00:01:45,269 --> 00:01:47,234
+That means every time you call filter,
+
+30
+00:01:47,234 --> 00:01:51,275
+it creates a new list with the elements that pass through the filter.
+
+31
+00:01:51,275 --> 00:01:55,995
+So, for example, our variable eager here we'll hold a new list
+
+32
+00:01:55,995 --> 00:02:00,405
+containing the decorations that start with P. If you want lazy behavior in Kotlin,
+
+33
+00:02:00,405 --> 00:02:01,840
+you can use sequences.
+
+34
+00:02:01,840 --> 00:02:05,745
+A sequence is a collection that can only look at one item at a time,
+
+35
+00:02:05,745 --> 00:02:08,145
+starting at the beginning and going to the end.
+
+36
+00:02:08,145 --> 00:02:11,390
+Conveniently, this is exactly the API filter needs.
+
+37
+00:02:11,389 --> 00:02:13,909
+When you return the filter results as a sequence,
+
+38
+00:02:13,909 --> 00:02:16,949
+our filtered variable won't hold a new list,
+
+39
+00:02:16,949 --> 00:02:19,634
+it'll hold a sequence of all of the list elements
+
+40
+00:02:19,634 --> 00:02:22,719
+and knowledge of the filter to apply to its elements.
+
+41
+00:02:22,719 --> 00:02:25,539
+Whenever you access elements of the sequence,
+
+42
+00:02:25,539 --> 00:02:28,419
+the filter is applied and the results are returned to you.
+
+43
+00:02:28,419 --> 00:02:31,674
+Of course, if we want to turn our sequence back into the list,
+
+44
+00:02:31,675 --> 00:02:33,255
+we can call two list.
+
+45
+00:02:33,254 --> 00:02:35,710
+At that point, a filter will be run and all of
+
+46
+00:02:35,710 --> 00:02:38,469
+the values that start with P will be put in the new list.
+
+47
+00:02:38,469 --> 00:02:41,500
+To really visualize what lazy sequences are,
+
+48
+00:02:41,500 --> 00:02:44,949
+let's use the function map and tell it to print every item.
+
+49
+00:02:44,949 --> 00:02:48,399
+Since it's lazy, calling map doesn't print anything.
+
+50
+00:02:48,400 --> 00:02:50,520
+When I take the first element however,
+
+51
+00:02:50,520 --> 00:02:53,725
+you can see that the map operation reads the first value,
+
+52
+00:02:53,724 --> 00:02:58,479
+and of course, taking the full list will iterate over all the values.
+

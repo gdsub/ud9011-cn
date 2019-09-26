@@ -1,0 +1,68 @@
+1
+00:00:00,000 --> 00:00:03,120
+This last example shows one of the challenges,
+
+2
+00:00:03,120 --> 00:00:04,634
+and features of Kotlin.
+
+3
+00:00:04,634 --> 00:00:08,039
+You can do most things in more than one way, correctly.
+
+4
+00:00:08,039 --> 00:00:11,009
+And you can often compact code significantly.
+
+5
+00:00:11,009 --> 00:00:13,019
+Sometimes that helps readability,
+
+6
+00:00:13,019 --> 00:00:16,364
+and even performance, and sometimes it doesn't.
+
+7
+00:00:16,364 --> 00:00:18,439
+Finding the most compact,
+
+8
+00:00:18,440 --> 00:00:21,115
+or most readable version can be like a puzzle.
+
+9
+00:00:21,114 --> 00:00:22,539
+Because I'm still learning,
+
+10
+00:00:22,539 --> 00:00:26,919
+this means that I often write code in the easiest, almost familiar way,
+
+11
+00:00:26,920 --> 00:00:29,315
+and then I will play with it, changing it,
+
+12
+00:00:29,315 --> 00:00:30,839
+like a Rubik's Cube,
+
+13
+00:00:30,839 --> 00:00:34,314
+until I find the best way for what I want to accomplish.
+
+14
+00:00:34,314 --> 00:00:39,054
+I did say play because sometimes I really get into it, and it's fun.
+
+15
+00:00:39,054 --> 00:00:41,155
+So, have fun practicing,
+
+16
+00:00:41,155 --> 00:00:43,270
+and we'll see you for the next lesson,
+
+17
+00:00:43,270 --> 00:00:45,580
+where we'll look at classes.
+

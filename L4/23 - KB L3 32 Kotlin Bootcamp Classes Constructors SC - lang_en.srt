@@ -1,0 +1,484 @@
+1
+00:00:00,000 --> 00:00:02,669
+Our Aquarium class would be much more
+
+2
+00:00:02,669 --> 00:00:06,154
+useful if we could specify the size when we create it.
+
+3
+00:00:06,155 --> 00:00:09,335
+We do this by passing in values.
+
+4
+00:00:09,335 --> 00:00:11,295
+As a first approach,
+
+5
+00:00:11,294 --> 00:00:15,990
+we can pass in values in the same way as function parameters and then,
+
+6
+00:00:15,990 --> 00:00:18,245
+assign them to the member variables.
+
+7
+00:00:18,245 --> 00:00:24,650
+Here are saying, make an aquarium constructor with three parameters;
+
+8
+00:00:24,649 --> 00:00:27,689
+length, width and height.
+
+9
+00:00:27,690 --> 00:00:31,525
+We're assigning the constructor arguments to properties length,
+
+10
+00:00:31,524 --> 00:00:35,274
+width and height inside the class body.
+
+11
+00:00:35,274 --> 00:00:37,515
+Just like with functions,
+
+12
+00:00:37,515 --> 00:00:39,804
+we can also use defaults.
+
+13
+00:00:39,804 --> 00:00:43,644
+While you can write it that way and it's good for spelling things out,
+
+14
+00:00:43,645 --> 00:00:45,280
+it's not good Kotlin.
+
+15
+00:00:45,280 --> 00:00:48,670
+We can simplify this code by declaring the variables with
+
+16
+00:00:48,670 --> 00:00:53,079
+the constructor like this and get rid of the assignments.
+
+17
+00:00:53,079 --> 00:00:57,445
+By using var or val on the constructor arguments,
+
+18
+00:00:57,445 --> 00:01:00,369
+it creates the member properties for you and
+
+19
+00:01:00,369 --> 00:01:04,015
+assigns the past in values or to default values.
+
+20
+00:01:04,015 --> 00:01:07,174
+This is a really common pattern in Kotlin
+
+21
+00:01:07,174 --> 00:01:10,700
+and the way most classes with constructors are declared.
+
+22
+00:01:10,700 --> 00:01:17,810
+Let's create a small 20 by 15 by 30 aquarium in our buildAquarium function.
+
+23
+00:01:17,810 --> 00:01:20,000
+To make this more readable,
+
+24
+00:01:20,000 --> 00:01:26,569
+let's pass in named parameters and print the volume for this small aquarium.
+
+25
+00:01:26,569 --> 00:01:29,389
+But what if we want to do more than assign
+
+26
+00:01:29,390 --> 00:01:34,135
+member variable values in the constructor when we create an object?
+
+27
+00:01:34,135 --> 00:01:38,400
+For example, when we feel an aquarium with water,
+
+28
+00:01:38,400 --> 00:01:41,640
+the water doesn't usually take up all of the tank.
+
+29
+00:01:41,640 --> 00:01:45,060
+Because it would overflow and spill really easily.
+
+30
+00:01:45,060 --> 00:01:47,939
+So, when we create the aquarium,
+
+31
+00:01:47,938 --> 00:01:51,564
+we can calculate the maximum amount of water to put in.
+
+32
+00:01:51,564 --> 00:01:55,799
+Let's create a changeable variable water and set it to
+
+33
+00:01:55,799 --> 00:02:01,215
+90% of the volume and because we multiply with 0.9,
+
+34
+00:02:01,215 --> 00:02:03,945
+the inferred data type is a double.
+
+35
+00:02:03,944 --> 00:02:07,349
+We need to put it below volume because properties
+
+36
+00:02:07,349 --> 00:02:11,069
+get initialized in the order in which they are defined.
+
+37
+00:02:11,069 --> 00:02:15,090
+Notice that we can use constructor parameters,
+
+38
+00:02:15,090 --> 00:02:20,414
+other properties or even member functions to initialize properties.
+
+39
+00:02:20,414 --> 00:02:26,409
+Finally, if we need to have another constructor than the default one for our class,
+
+40
+00:02:26,409 --> 00:02:28,335
+there is a way to do that.
+
+41
+00:02:28,335 --> 00:02:34,450
+For example, instead of specifying the dimensions when we create the aquarium,
+
+42
+00:02:34,449 --> 00:02:40,254
+we might want to specify the number of fish when we create an aquarium in buildAquarium.
+
+43
+00:02:40,254 --> 00:02:45,414
+This gives us an error until we define a matching constructor.
+
+44
+00:02:45,414 --> 00:02:50,914
+For our constructor, a constructor starts with the constructor keyword,
+
+45
+00:02:50,914 --> 00:02:59,560
+followed by arguments, a colon and a call to the default constructor with this.
+
+46
+00:02:59,560 --> 00:03:02,245
+Note that when we create an aquarium,
+
+47
+00:03:02,245 --> 00:03:04,539
+we can't mix constructor arguments.
+
+48
+00:03:04,539 --> 00:03:10,074
+So, we cannot create an aquarium passing the length and the number of fish.
+
+49
+00:03:10,074 --> 00:03:15,250
+The arguments have to match exactly with one of the available constructors.
+
+50
+00:03:15,250 --> 00:03:21,844
+Our errors are gone and now we can print our small aquarium in buildAquarium.
+
+51
+00:03:21,844 --> 00:03:26,125
+The dimensions have the default values because we are not doing
+
+52
+00:03:26,125 --> 00:03:30,969
+anything in the new constructor yet. Let's fix that.
+
+53
+00:03:30,969 --> 00:03:33,379
+We want our fish to have plenty of room,
+
+54
+00:03:33,379 --> 00:03:36,710
+so let's say we put one centimeter of fish per
+
+55
+00:03:36,710 --> 00:03:40,860
+two liters or 2000 cubic centimeters of water.
+
+56
+00:03:40,860 --> 00:03:47,015
+Inside the constructor, we do the calculations that are specific for this constructor.
+
+57
+00:03:47,014 --> 00:03:52,914
+We can now run our program and get an aquarium size based on the number of fish.
+
+58
+00:03:52,914 --> 00:03:56,449
+Shaun, anything else to say about constructors?
+
+59
+00:03:56,449 --> 00:03:59,149
+Thanks Alex.
+
+60
+00:03:59,150 --> 00:04:05,825
+I wanted to talk a bit more about constructors and a related concept in it.
+
+61
+00:04:05,824 --> 00:04:09,144
+I'll define a fish class to dive in further.
+
+62
+00:04:09,145 --> 00:04:12,370
+Let's do that in a new file called fish.
+
+63
+00:04:12,370 --> 00:04:16,120
+Fish has two parameters and here's the class declaration.
+
+64
+00:04:16,120 --> 00:04:18,579
+Friendly, is declared as a vowel,
+
+65
+00:04:18,579 --> 00:04:21,484
+so column will create a property for friendly.
+
+66
+00:04:21,485 --> 00:04:25,884
+We'll use that to note if a fish is friendly or aggressive.
+
+67
+00:04:25,884 --> 00:04:28,920
+Volume needed does not have val or var,
+
+68
+00:04:28,920 --> 00:04:33,045
+so Kotlin will not create a property from this argument for you.
+
+69
+00:04:33,045 --> 00:04:38,305
+This class declaration also results in Kotlin gradient constructor from this information.
+
+70
+00:04:38,305 --> 00:04:42,858
+In Kotlin, most classes only specify this one constructor
+
+71
+00:04:42,858 --> 00:04:47,919
+and with default parameters constructor overloading is not needed.
+
+72
+00:04:47,920 --> 00:04:53,105
+That is you don't have to define a constructor for each combination of arguments.
+
+73
+00:04:53,105 --> 00:04:55,415
+Now, to do something with volume needed,
+
+74
+00:04:55,415 --> 00:04:59,050
+let's define a vowel size of int on fish.
+
+75
+00:04:59,050 --> 00:05:01,605
+And then, in an init block,
+
+76
+00:05:01,605 --> 00:05:04,360
+calculate the size that object creation time.
+
+77
+00:05:04,360 --> 00:05:07,280
+Init works just like a constructor and that we
+
+78
+00:05:07,279 --> 00:05:10,429
+can put logic in it to initialize our properties.
+
+79
+00:05:10,430 --> 00:05:12,215
+If the fish is friendly,
+
+80
+00:05:12,214 --> 00:05:14,174
+it only needs the specified volume.
+
+81
+00:05:14,175 --> 00:05:17,019
+However, if the fish is aggressive,
+
+82
+00:05:17,019 --> 00:05:19,485
+it needs twice the minimum volume.
+
+83
+00:05:19,485 --> 00:05:20,939
+And if we make a function,
+
+84
+00:05:20,939 --> 00:05:23,189
+we can create a fish and print it out.
+
+85
+00:05:23,189 --> 00:05:28,129
+However, this gives an error because volume needed is not a property.
+
+86
+00:05:28,129 --> 00:05:31,685
+Here's the correct code where we use size instead.
+
+87
+00:05:31,685 --> 00:05:34,685
+When we run it, it prints the size of the fish.
+
+88
+00:05:34,685 --> 00:05:38,435
+Alex showed you how to declare secondary constructors.
+
+89
+00:05:38,435 --> 00:05:41,405
+Let's define one now in fish.
+
+90
+00:05:41,404 --> 00:05:43,509
+It's going to look like this.
+
+91
+00:05:43,509 --> 00:05:47,584
+In Kotlin, you typically don't need secondary constructors.
+
+92
+00:05:47,584 --> 00:05:50,459
+Most classes only provide a primary constructor,
+
+93
+00:05:50,459 --> 00:05:54,029
+but if you do declare a secondary constructor,
+
+94
+00:05:54,029 --> 00:05:58,564
+it must contain a call to the primary constructor by using this.
+
+95
+00:05:58,564 --> 00:06:01,995
+You also have to pass any required arguments.
+
+96
+00:06:01,995 --> 00:06:05,009
+Let's add some more init box to this class.
+
+97
+00:06:05,009 --> 00:06:09,680
+You can use init blocks the way you would use a constructor body in other languages.
+
+98
+00:06:09,680 --> 00:06:11,819
+You can have more than one in init block and they
+
+99
+00:06:11,819 --> 00:06:14,639
+always run before any secondary constructors.
+
+100
+00:06:14,639 --> 00:06:17,865
+And they can be almost anywhere in your class.
+
+101
+00:06:17,865 --> 00:06:21,090
+They're executed in order from the top of the class to the bottom.
+
+102
+00:06:21,089 --> 00:06:26,519
+So, if you were using any properties they need to come before the init blocks.
+
+103
+00:06:26,519 --> 00:06:29,319
+You don't have to explicitly call on it.
+
+104
+00:06:29,319 --> 00:06:31,620
+It's called as part of the constructor.
+
+105
+00:06:31,620 --> 00:06:33,810
+Now, in a lot of languages,
+
+106
+00:06:33,810 --> 00:06:36,435
+defining a lot of constructors is normal.
+
+107
+00:06:36,435 --> 00:06:39,689
+In Kotlin, you have default parameters.
+
+108
+00:06:39,689 --> 00:06:43,225
+Because of that, good Kotlin classes only define
+
+109
+00:06:43,225 --> 00:06:47,090
+one constructor with default parameters for optional values.
+
+110
+00:06:47,089 --> 00:06:50,109
+Now, if you would make a secondary instructor,
+
+111
+00:06:50,110 --> 00:06:52,870
+consider making a helper method instead.
+
+112
+00:06:52,870 --> 00:06:55,644
+Like this one, makeDefaultFish,
+
+113
+00:06:55,644 --> 00:06:59,214
+which only creates a friendly fish of size 50.
+
+114
+00:06:59,214 --> 00:07:03,324
+This keeps your classes simple while providing a clean API.
+
+115
+00:07:03,324 --> 00:07:05,514
+That was a lot about constructors.
+
+116
+00:07:05,514 --> 00:07:08,500
+Kotlin allows you a lot of flexibility with constructors,
+
+117
+00:07:08,500 --> 00:07:11,649
+but honestly, you can just keep it simple.
+
+118
+00:07:11,649 --> 00:07:13,609
+To write good Kotlin code,
+
+119
+00:07:13,610 --> 00:07:17,350
+just use one primary constructor and init blocks.
+
+120
+00:07:17,350 --> 00:07:19,300
+When you need more flexibility,
+
+121
+00:07:19,300 --> 00:07:23,069
+consider adding helper functions like make default fish.
+

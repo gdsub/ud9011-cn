@@ -1,0 +1,12 @@
+1
+00:00:00,000 --> 00:00:01,995
+That was a lot of operators.
+
+2
+00:00:01,995 --> 00:00:03,959
+Before we move on to Strings,
+
+3
+00:00:03,959 --> 00:00:08,109
+let's take a break and look at what's happening with our aquarium.
+

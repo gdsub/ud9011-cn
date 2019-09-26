@@ -1,0 +1,8 @@
+1
+00:00:00,000 --> 00:00:03,555
+All right, before we dive deeper into Generics,
+
+2
+00:00:03,555 --> 00:00:06,820
+let's find out what's happening with our aquarium.
+

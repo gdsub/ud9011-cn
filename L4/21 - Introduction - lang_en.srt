@@ -1,0 +1,72 @@
+1
+00:00:00,000 --> 00:00:02,669
+Welcome back. In this lesson,
+
+2
+00:00:02,669 --> 00:00:06,854
+we are going to dive into object oriented programming in Kotlin.
+
+3
+00:00:06,855 --> 00:00:09,419
+Let's refresh a bit of terminology,
+
+4
+00:00:09,419 --> 00:00:13,394
+so that we're all calling the same things by the same names.
+
+5
+00:00:13,394 --> 00:00:16,274
+Classes are blueprints for objects.
+
+6
+00:00:16,274 --> 00:00:19,125
+Like this is an aquarium blueprint.
+
+7
+00:00:19,125 --> 00:00:24,990
+Objects are instances of classes that is the actual aquarium.
+
+8
+00:00:24,989 --> 00:00:28,949
+Properties are characteristics of classes such as the length,
+
+9
+00:00:28,949 --> 00:00:31,544
+width, and height of an aquarium.
+
+10
+00:00:31,545 --> 00:00:35,310
+Methods are the functionality of the class,
+
+11
+00:00:35,310 --> 00:00:39,480
+what the object they could do for example, fill with water.
+
+12
+00:00:39,479 --> 00:00:44,744
+Interfaces are a specification that a class can implement.
+
+13
+00:00:44,744 --> 00:00:49,168
+For example, cleaning is common not just to aquariums,
+
+14
+00:00:49,168 --> 00:00:52,559
+and cleaning generally happens in similar ways.
+
+15
+00:00:52,560 --> 00:00:55,270
+So, we can have an interface clean,
+
+16
+00:00:55,270 --> 00:00:57,660
+and aquarium could implement it.
+
+17
+00:00:57,659 --> 00:00:59,789
+In the following screencast,
+
+18
+00:00:59,789 --> 00:01:05,319
+we're going to build some classes around our aquarium exploring all those concepts.
+

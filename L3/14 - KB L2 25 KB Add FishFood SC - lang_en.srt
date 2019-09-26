@@ -1,0 +1,132 @@
+1
+00:00:00,000 --> 00:00:04,559
+Now, let's serve the fish a different food each day of the week.
+
+2
+00:00:04,559 --> 00:00:06,839
+We'll make another function for that,
+
+3
+00:00:06,839 --> 00:00:08,730
+and call it fish food.
+
+4
+00:00:08,730 --> 00:00:11,790
+Let's call fish food from feed the fish.
+
+5
+00:00:11,789 --> 00:00:16,469
+Since fish food will return a different food for each day of the week,
+
+6
+00:00:16,469 --> 00:00:19,424
+we need to parse the day as a parameter.
+
+7
+00:00:19,425 --> 00:00:22,949
+Now, let's define fish food.
+
+8
+00:00:22,949 --> 00:00:26,625
+A parameter is specified by its name,
+
+9
+00:00:26,625 --> 00:00:29,100
+a colon followed by the type.
+
+10
+00:00:29,100 --> 00:00:32,950
+Then we have the colon and the return type.
+
+11
+00:00:32,950 --> 00:00:37,645
+So, fish food takes a day as a parameter,
+
+12
+00:00:37,645 --> 00:00:41,210
+and it will return a string.
+
+13
+00:00:41,210 --> 00:00:44,170
+Here is the first version of the function body,
+
+14
+00:00:44,170 --> 00:00:46,539
+where we choose and return the food.
+
+15
+00:00:46,539 --> 00:00:49,570
+The when statement looks at the day variable,
+
+16
+00:00:49,570 --> 00:00:51,295
+and picks the correct food.
+
+17
+00:00:51,295 --> 00:00:55,105
+Note that you don't have a break at the end of the when branch.
+
+18
+00:00:55,104 --> 00:00:57,724
+When works a lot like case statements,
+
+19
+00:00:57,725 --> 00:01:00,010
+but it automatically breaks,
+
+20
+00:01:00,009 --> 00:01:05,980
+saving you from writing boilerplate code or writing accidental bugs.
+
+21
+00:01:05,980 --> 00:01:08,915
+But we can do much better.
+
+22
+00:01:08,915 --> 00:01:12,055
+Since everything in Kotlin has a value,
+
+23
+00:01:12,055 --> 00:01:14,980
+the when expression also has a value.
+
+24
+00:01:14,980 --> 00:01:19,225
+This value will be the last expression of the branch that was picked.
+
+25
+00:01:19,224 --> 00:01:22,984
+So, we can return the when value
+
+26
+00:01:22,984 --> 00:01:27,834
+directly without needing to assign the result to a variable.
+
+27
+00:01:27,834 --> 00:01:33,324
+When we do that, we must have an else branch to cover all cases.
+
+28
+00:01:33,325 --> 00:01:35,665
+The else case is the catch-all,
+
+29
+00:01:35,665 --> 00:01:38,040
+if none of the other branches matched.
+
+30
+00:01:38,040 --> 00:01:41,260
+To make sure the else case happens sometimes,
+
+31
+00:01:41,260 --> 00:01:44,344
+let's remove Tuesday and Saturday.
+
+32
+00:01:44,343 --> 00:01:48,789
+Now, we can run the code and see how it outputs the different days,
+
+33
+00:01:48,790 --> 00:01:52,910
+and foods, and fasting for the missing days.
+

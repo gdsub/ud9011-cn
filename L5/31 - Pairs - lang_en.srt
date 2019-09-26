@@ -1,0 +1,132 @@
+1
+00:00:00,000 --> 00:00:06,809
+Pairs are a neat Kotlin datatype that allows us to define a generic pair of values.
+
+2
+00:00:06,809 --> 00:00:10,183
+For example, we can associate
+
+3
+00:00:10,183 --> 00:00:14,459
+each piece of equipment with a description of what it's good for.
+
+4
+00:00:14,460 --> 00:00:17,265
+We define a variable for equipment,
+
+5
+00:00:17,265 --> 00:00:19,199
+and set it to a pair,
+
+6
+00:00:19,199 --> 00:00:26,100
+where the first item 'fishnet' is mapped to the second item 'catching fish'.
+
+7
+00:00:26,100 --> 00:00:30,445
+To access the first and second elements of this pair,
+
+8
+00:00:30,445 --> 00:00:33,880
+refer to the first and second elements.
+
+9
+00:00:33,880 --> 00:00:37,000
+If you want to have some fun with pairs,
+
+10
+00:00:37,000 --> 00:00:38,874
+you can chain calls,
+
+11
+00:00:38,874 --> 00:00:42,460
+the Kotlin compiler will add the parentheses for you.
+
+12
+00:00:42,460 --> 00:00:47,079
+And you can print the first element of the first element,
+
+13
+00:00:47,079 --> 00:00:50,545
+or you can add your own parentheses,
+
+14
+00:00:50,545 --> 00:00:52,835
+and print the equipment.
+
+15
+00:00:52,835 --> 00:00:58,704
+If we can put together pairs it would be helpful if we could also separate them.
+
+16
+00:00:58,704 --> 00:01:00,854
+This is called destructuring,
+
+17
+00:01:00,854 --> 00:01:05,795
+and we do it to take apart an object and assign it to multiple variables,
+
+18
+00:01:05,795 --> 00:01:09,314
+such as 'val', 'tool',
+
+19
+00:01:09,314 --> 00:01:13,620
+'use' and assign it to 'fishnet'.
+
+20
+00:01:13,620 --> 00:01:17,295
+Now, if we print 'tool' and 'use',
+
+21
+00:01:17,295 --> 00:01:19,840
+'tool' will be the first value in the pair
+
+22
+00:01:19,840 --> 00:01:24,805
+'fishnet' and 'use' will be the second value 'catching fish'.
+
+23
+00:01:24,805 --> 00:01:29,360
+There are also triplet's and destructuring components,
+
+24
+00:01:29,359 --> 00:01:32,814
+and we've added links to the documentation in the notes.
+
+25
+00:01:32,814 --> 00:01:35,704
+We can turn a pair into a string,
+
+26
+00:01:35,704 --> 00:01:40,900
+with two string or we can turn it into a list.
+
+27
+00:01:40,900 --> 00:01:43,790
+So, what is this good for?
+
+28
+00:01:43,790 --> 00:01:48,910
+Well, you can use it to return more than one values from a function.
+
+29
+00:01:48,909 --> 00:01:54,099
+You have your function 'return a pair' and destructure it on arrival.
+
+30
+00:01:54,099 --> 00:02:01,444
+We can make a function 'giveMeATool' that returns a pair of 'fishnet' to 'catching'.
+
+31
+00:02:01,444 --> 00:02:03,649
+We can destructure it,
+
+32
+00:02:03,650 --> 00:02:07,255
+and we can print the 'tool' and the 'use'.
+
+33
+00:02:07,254 --> 00:02:11,069
+Next, let's take a look at collections.
+

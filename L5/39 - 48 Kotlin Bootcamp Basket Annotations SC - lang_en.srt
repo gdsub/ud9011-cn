@@ -1,0 +1,188 @@
+1
+00:00:00,000 --> 00:00:05,115
+Annotations are a means of attaching metadata to code.
+
+2
+00:00:05,115 --> 00:00:08,759
+That is, the annotations are read by the compiler,
+
+3
+00:00:08,759 --> 00:00:11,849
+and used to generate code or even logic.
+
+4
+00:00:11,849 --> 00:00:14,684
+Annotations are not Kotlin specific,
+
+5
+00:00:14,685 --> 00:00:17,865
+but Kotlin offers some useful annotations.
+
+6
+00:00:17,864 --> 00:00:21,824
+Annotations go right before the thing that is annotated,
+
+7
+00:00:21,824 --> 00:00:25,304
+and most things can be annotated: classes,
+
+8
+00:00:25,304 --> 00:00:28,574
+functions, methods, and even control structures.
+
+9
+00:00:28,574 --> 00:00:31,934
+Some annotations can even take arguments.
+
+10
+00:00:31,934 --> 00:00:34,570
+There are annotations that are available through
+
+11
+00:00:34,570 --> 00:00:38,049
+the Kotlin standard library that control the way code is compiled.
+
+12
+00:00:38,049 --> 00:00:41,108
+They're really useful if you're exporting Kotlin to Java,
+
+13
+00:00:41,109 --> 00:00:43,520
+but otherwise you don't need them that often.
+
+14
+00:00:43,520 --> 00:00:46,855
+Here, we're saying that the exported name of this file is
+
+15
+00:00:46,854 --> 00:00:50,619
+InteropFish with the JvmName annotation.
+
+16
+00:00:50,619 --> 00:00:56,049
+The JvmName annotation is taking an argument of InteropFish.
+
+17
+00:00:56,049 --> 00:01:00,519
+Then in the companion object by saying JvmStatic,
+
+18
+00:01:00,520 --> 00:01:05,424
+we tell Kotlin to make the Interop function a static function on InteropFish.
+
+19
+00:01:05,424 --> 00:01:09,704
+We need to use a companion object because we're making the function static.
+
+20
+00:01:09,704 --> 00:01:13,530
+Many frameworks use annotations to configure how they run.
+
+21
+00:01:13,530 --> 00:01:16,245
+You can even create your own annotations.
+
+22
+00:01:16,245 --> 00:01:19,890
+Let's say you have a simple plant class with two methods.
+
+23
+00:01:19,890 --> 00:01:24,299
+You can then use reflection to get information about the class at runtime,
+
+24
+00:01:24,299 --> 00:01:27,450
+that's the colon, colon class operation.
+
+25
+00:01:27,450 --> 00:01:33,000
+This is useful, and let's Kotlin look into the properties on classes, or reflect.
+
+26
+00:01:33,000 --> 00:01:36,420
+Here, we're just printing all of the methods on the class.
+
+27
+00:01:36,420 --> 00:01:39,000
+It'll print trim and fertilize.
+
+28
+00:01:39,000 --> 00:01:41,655
+Here's the most basic annotation.
+
+29
+00:01:41,655 --> 00:01:45,275
+It doesn't do anything other than tell you it's annotated.
+
+30
+00:01:45,275 --> 00:01:49,955
+This is the complete annotation even if all it does is exist,
+
+31
+00:01:49,954 --> 00:01:52,780
+and you use it like this.
+
+32
+00:01:53,060 --> 00:01:56,719
+You can get all of the annotations of a class,
+
+33
+00:01:56,719 --> 00:02:00,275
+and do something in response such as print them,
+
+34
+00:02:00,275 --> 00:02:05,674
+and you can check for a specific annotation and do something in response.
+
+35
+00:02:05,674 --> 00:02:10,665
+One important thing to know because it comes up a lot when using frameworks,
+
+36
+00:02:10,664 --> 00:02:13,759
+annotations can target getters or setters.
+
+37
+00:02:13,759 --> 00:02:16,889
+When they do, you can apply them with the get colon,
+
+38
+00:02:16,889 --> 00:02:18,750
+or set colon prefix.
+
+39
+00:02:18,750 --> 00:02:21,000
+Let's declare two annotations.
+
+40
+00:02:21,000 --> 00:02:24,180
+OnGet can only be applied to property getters,
+
+41
+00:02:24,180 --> 00:02:27,520
+OnSet can only be applied to property setters.
+
+42
+00:02:27,520 --> 00:02:31,130
+Here I'm saying, apply OnGet to isGrowing's getter,
+
+43
+00:02:31,129 --> 00:02:34,819
+and apply OnSet to needsFood setter.
+
+44
+00:02:34,819 --> 00:02:38,370
+That's all we're going to cover for annotations.
+
+45
+00:02:38,370 --> 00:02:41,400
+They're really powerful for creating libraries that inspect
+
+46
+00:02:41,400 --> 00:02:45,200
+annotations both at runtime and sometimes at compile time.
+
+47
+00:02:45,199 --> 00:02:51,269
+However, typical application code just uses annotations provided by frameworks.
+

@@ -1,0 +1,156 @@
+1
+00:00:00,000 --> 00:00:04,424
+This function has all the basic parts of a Kotlin function.
+
+2
+00:00:04,424 --> 00:00:06,839
+It starts with the keyword "fun."
+
+3
+00:00:06,839 --> 00:00:09,585
+Then, comes the name of the function,
+
+4
+00:00:09,585 --> 00:00:13,915
+printHello, followed by parentheses for arguments.
+
+5
+00:00:13,914 --> 00:00:16,839
+But we don't have any arguments and
+
+6
+00:00:16,839 --> 00:00:20,844
+the function body where things happen inside the curly braces.
+
+7
+00:00:20,844 --> 00:00:26,619
+And we execute the function by invoking its name followed by the parentheses.
+
+8
+00:00:26,620 --> 00:00:29,185
+If instead of using the interpreter,
+
+9
+00:00:29,184 --> 00:00:32,320
+we want to write and save a program in IntelliJ,
+
+10
+00:00:32,320 --> 00:00:34,375
+we have the following steps.
+
+11
+00:00:34,375 --> 00:00:36,340
+In the left-hand navigation,
+
+12
+00:00:36,340 --> 00:00:39,745
+there is a list of all our project files and folders.
+
+13
+00:00:39,744 --> 00:00:42,729
+Find and right-click the source folder.
+
+14
+00:00:42,729 --> 00:00:46,209
+Select new Kotlin File Class,
+
+15
+00:00:46,210 --> 00:00:50,990
+name the file "AMS" and click ''OK''.
+
+16
+00:00:50,990 --> 00:00:53,429
+The file is now in your source folder,
+
+17
+00:00:53,429 --> 00:00:56,100
+and it's extension is.kt.
+
+18
+00:00:56,100 --> 00:01:01,200
+We can now put our code into this file and eventually execute it.
+
+19
+00:01:01,200 --> 00:01:05,295
+We'll also use the repl and switch back and forth as it's convenient.
+
+20
+00:01:05,295 --> 00:01:08,534
+Firstly, to run an actual Kotlin program,
+
+21
+00:01:08,534 --> 00:01:10,274
+we need a main function.
+
+22
+00:01:10,275 --> 00:01:13,440
+Main is always the entry point for execution.
+
+23
+00:01:13,439 --> 00:01:15,929
+In Kotlin, it looks like this.
+
+24
+00:01:15,930 --> 00:01:18,690
+It's called Main.
+
+25
+00:01:18,689 --> 00:01:21,239
+It takes an array of strings as
+
+26
+00:01:21,239 --> 00:01:25,894
+its arguments followed by the function body in curly braces,
+
+27
+00:01:25,894 --> 00:01:28,219
+and we print "Hello World."
+
+28
+00:01:28,219 --> 00:01:30,858
+This function has no return statement,
+
+29
+00:01:30,858 --> 00:01:37,219
+but every function in Kotlin returns something even when nothing is explicitly specified.
+
+30
+00:01:37,219 --> 00:01:43,894
+So, a function like main returns a type unit which is Kotlin's way of saying no value.
+
+31
+00:01:43,894 --> 00:01:45,994
+And when a function returns unit,
+
+32
+00:01:45,995 --> 00:01:48,725
+you don't have to specify it explicitly.
+
+33
+00:01:48,724 --> 00:01:51,199
+This is different from other languages where you have to
+
+34
+00:01:51,200 --> 00:01:53,765
+explicitly say you are returning nothing.
+
+35
+00:01:53,765 --> 00:01:55,400
+To run this function,
+
+36
+00:01:55,400 --> 00:02:01,775
+click on the green triangle next to the main function and select Run AMSKt.
+
+37
+00:02:01,775 --> 00:02:04,700
+IntelliJ will take a moment to build,
+
+38
+00:02:04,700 --> 00:02:06,305
+and execute the code,
+
+39
+00:02:06,305 --> 00:02:11,010
+and then you can see the result in the log window that opens.
+

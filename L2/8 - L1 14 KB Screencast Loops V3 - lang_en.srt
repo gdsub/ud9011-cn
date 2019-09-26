@@ -1,0 +1,180 @@
+1
+00:00:00,000 --> 00:00:02,504
+Now, here's the thing about val.
+
+2
+00:00:02,504 --> 00:00:05,519
+If your val variable value is a reference,
+
+3
+00:00:05,519 --> 00:00:08,564
+then you cannot assign it a different reference later.
+
+4
+00:00:08,564 --> 00:00:11,779
+But if you're referencing something that's not immutable,
+
+5
+00:00:11,779 --> 00:00:12,984
+it can still change.
+
+6
+00:00:12,984 --> 00:00:14,864
+Val only applies to the reference,
+
+7
+00:00:14,865 --> 00:00:18,149
+and it doesn't make the object it points to immutable.
+
+8
+00:00:18,149 --> 00:00:21,929
+In this example, we cannot assign a different list in my list,
+
+9
+00:00:21,929 --> 00:00:24,480
+but we can manipulate the elements of the lists,
+
+10
+00:00:24,480 --> 00:00:26,594
+such as removing an element.
+
+11
+00:00:26,594 --> 00:00:29,699
+Now for loops, we need something to loop over.
+
+12
+00:00:29,699 --> 00:00:33,854
+So, here are lists and arrays as examples of collections.
+
+13
+00:00:33,854 --> 00:00:38,489
+Arrays work pretty much as you'd expect with some cool additions.
+
+14
+00:00:38,539 --> 00:00:42,435
+You can create an array with arrayOf.
+
+15
+00:00:42,435 --> 00:00:44,355
+You can create typed arrays,
+
+16
+00:00:44,354 --> 00:00:50,489
+for example integers, but if you add another type element it gives you an error.
+
+17
+00:00:50,490 --> 00:00:53,594
+But you can mix types in untyped arrays.
+
+18
+00:00:53,594 --> 00:00:54,914
+To print the array,
+
+19
+00:00:54,914 --> 00:00:58,439
+you can convert its contents to a string with toString.
+
+20
+00:00:58,439 --> 00:01:01,783
+You'll probably see an error in the interpreter.
+
+21
+00:01:01,783 --> 00:01:03,765
+Wait for the tool tip,
+
+22
+00:01:03,765 --> 00:01:08,489
+and then press options enter to import arrays from the standard library.
+
+23
+00:01:08,489 --> 00:01:10,574
+You can nest arrays.
+
+24
+00:01:10,575 --> 00:01:13,280
+When you put an array within an array,
+
+25
+00:01:13,280 --> 00:01:15,394
+you have an array of arrays,
+
+26
+00:01:15,394 --> 00:01:19,400
+not a flattened array of the contents of the two.
+
+27
+00:01:19,400 --> 00:01:22,190
+A really cool feature of arrays in Kotlin is
+
+28
+00:01:22,189 --> 00:01:24,859
+the ability to initialize them with dynamic code.
+
+29
+00:01:24,859 --> 00:01:27,340
+Don't worry too much about the syntax for now.
+
+30
+00:01:27,340 --> 00:01:31,204
+The important point is to see how much boilerplate code this cut-out.
+
+31
+00:01:31,204 --> 00:01:35,269
+You can read this as initialize an array of five elements,
+
+32
+00:01:35,269 --> 00:01:39,189
+assign each item to its index times two.
+
+33
+00:01:39,189 --> 00:01:41,379
+Once you have arrays,
+
+34
+00:01:41,379 --> 00:01:47,494
+you want to do something with their elements and that often happens in a for loop.
+
+35
+00:01:47,495 --> 00:01:51,275
+Here is your basic loop over an array.
+
+36
+00:01:51,275 --> 00:01:55,270
+Here are a few other things you can do with for loops.
+
+37
+00:01:55,269 --> 00:01:58,973
+You can loop over the index along with the elements,
+
+38
+00:01:58,974 --> 00:02:00,939
+which saves you from having to use
+
+39
+00:02:00,939 --> 00:02:04,804
+the index to get the element inside the body of the loop.
+
+40
+00:02:04,805 --> 00:02:06,930
+It's much more readable this way.
+
+41
+00:02:06,930 --> 00:02:09,325
+You've seen ranges and here is more.
+
+42
+00:02:09,324 --> 00:02:11,829
+You can do ranges in an alphabet.
+
+43
+00:02:11,830 --> 00:02:14,680
+You can do ranges of numbers.
+
+44
+00:02:14,680 --> 00:02:17,590
+You can do a range going downwards,
+
+45
+00:02:17,590 --> 00:02:21,680
+and you can do a range advancing in multiple steps.
+

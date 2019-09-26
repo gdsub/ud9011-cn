@@ -1,0 +1,152 @@
+1
+00:00:00,000 --> 00:00:03,779
+Now, that you've made a file with a main function,
+
+2
+00:00:03,779 --> 00:00:06,285
+it's time to define some more functions.
+
+3
+00:00:06,285 --> 00:00:12,070
+Let's add a function for our AMS that feeds the fish different foods on different days.
+
+4
+00:00:12,070 --> 00:00:15,580
+So, let's define a function,
+
+5
+00:00:15,580 --> 00:00:21,870
+feeds the fish that will hold our AMS logic and call it from main.
+
+6
+00:00:21,870 --> 00:00:24,390
+Let's make feed the fish to something.
+
+7
+00:00:24,390 --> 00:00:30,045
+Our goal is to pick a random day of the week and output a different food for each day.
+
+8
+00:00:30,045 --> 00:00:32,295
+We'll build it one step at a time.
+
+9
+00:00:32,295 --> 00:00:35,660
+First, let's put the basic structure together.
+
+10
+00:00:35,659 --> 00:00:38,759
+Inside the body of the feed the fish function,
+
+11
+00:00:38,759 --> 00:00:43,214
+add a variable called "day" and assign it to "Tuesday".
+
+12
+00:00:43,215 --> 00:00:47,745
+To start with, our AMS will only know about Tuesday.
+
+13
+00:00:47,744 --> 00:00:52,379
+Add a second variable called food that is pellet's.
+
+14
+00:00:52,380 --> 00:00:55,245
+That's what fish eat on Tuesdays.
+
+15
+00:00:55,244 --> 00:00:59,534
+Lastly, add a print statement using a string template.
+
+16
+00:00:59,534 --> 00:01:02,144
+This will print out today and food.
+
+17
+00:01:02,145 --> 00:01:06,314
+Let's run our program again and you'll see the output,
+
+18
+00:01:06,314 --> 00:01:09,939
+today is Tuesday and the fish eat pellet's.
+
+19
+00:01:09,939 --> 00:01:13,155
+Extending our functionality, we want to select
+
+20
+00:01:13,155 --> 00:01:16,920
+a random day of the week each time this program is run.
+
+21
+00:01:16,920 --> 00:01:18,725
+Below feed the fish,
+
+22
+00:01:18,724 --> 00:01:25,009
+create a function called random day with no arguments and it returns a string.
+
+23
+00:01:25,010 --> 00:01:29,340
+We are using strings for the weekdays in this example because it's
+
+24
+00:01:29,340 --> 00:01:33,585
+more readable and the final destination is to print the value.
+
+25
+00:01:33,584 --> 00:01:38,174
+Inside the function, create a list of weekdays as strings.
+
+26
+00:01:38,174 --> 00:01:44,325
+Below that, returned a value at a randomly chosen index inside the list.
+
+27
+00:01:44,325 --> 00:01:49,045
+Random gives us an error because we have to import the library.
+
+28
+00:01:49,045 --> 00:01:52,685
+Here are some things to notice about this finished function.
+
+29
+00:01:52,685 --> 00:01:57,400
+You are importing a Java library for random because under the hood,
+
+30
+00:01:57,400 --> 00:02:00,655
+Kotlin works seamlessly with Java libraries.
+
+31
+00:02:00,655 --> 00:02:02,650
+In the return statement,
+
+32
+00:02:02,650 --> 00:02:06,375
+we get a random number between zero and six.
+
+33
+00:02:06,375 --> 00:02:09,210
+Seven is the boundary and excluded.
+
+34
+00:02:09,210 --> 00:02:12,485
+And then, we return the associated weekday.
+
+35
+00:02:12,485 --> 00:02:14,145
+In feed the fish,
+
+36
+00:02:14,145 --> 00:02:17,770
+replace Tuesday with a call to random day.
+
+37
+00:02:17,770 --> 00:02:20,890
+When we run the program again a couple of times,
+
+38
+00:02:20,889 --> 00:02:24,649
+we see a random day of the week in the output.
+

@@ -1,0 +1,16 @@
+1
+00:00:00,000 --> 00:00:02,129
+Now, that you can make classes,
+
+2
+00:00:02,129 --> 00:00:03,304
+let's stop for a moment,
+
+3
+00:00:03,305 --> 00:00:05,550
+and see how our aquarium is progressing,
+
+4
+00:00:05,549 --> 00:00:08,710
+and then we'll continue on with inheritance.
+

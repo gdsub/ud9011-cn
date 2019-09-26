@@ -1,0 +1,212 @@
+1
+00:00:00,000 --> 00:00:04,209
+There are three other types of special purpose classes you can make with Kotlin.
+
+2
+00:00:04,209 --> 00:00:06,660
+The first special type of class where Kotlin removes
+
+3
+00:00:06,660 --> 00:00:10,050
+boilerplate acrobatics from your code singletons.
+
+4
+00:00:10,050 --> 00:00:14,089
+For example, there can only be one MobyDickWhale.
+
+5
+00:00:14,089 --> 00:00:16,050
+To create a singleton,
+
+6
+00:00:16,050 --> 00:00:20,935
+use the object keyword when you declare your class, and that's it.
+
+7
+00:00:20,934 --> 00:00:25,649
+Anytime you're defining a class that shouldn't be instantiated multiple times,
+
+8
+00:00:25,649 --> 00:00:29,394
+you can use the object keyword in place of class.
+
+9
+00:00:29,394 --> 00:00:34,575
+When you do that, Kotlin will instantiate exactly one instance of the class.
+
+10
+00:00:34,575 --> 00:00:37,679
+In this example, MobyDickWhale is an object,
+
+11
+00:00:37,679 --> 00:00:39,810
+and there can only be one MobyDick.
+
+12
+00:00:39,810 --> 00:00:43,195
+So, we declare it as an object instead of a class.
+
+13
+00:00:43,195 --> 00:00:45,314
+Kotlin also has enums,
+
+14
+00:00:45,314 --> 00:00:47,195
+which let you enumerate items.
+
+15
+00:00:47,195 --> 00:00:50,274
+Here, we're declaring an enum with red,
+
+16
+00:00:50,274 --> 00:00:52,884
+green, and blue colors.
+
+17
+00:00:52,884 --> 00:00:58,494
+Enums actually define a class and you can give them properties or even methods.
+
+18
+00:00:58,494 --> 00:01:03,284
+You declare an enum by modifying the class keyword with enum.
+
+19
+00:01:03,284 --> 00:01:05,789
+Enums are like the MobyDick object.
+
+20
+00:01:05,790 --> 00:01:08,190
+Kotlin will make exactly one red,
+
+21
+00:01:08,189 --> 00:01:11,594
+exactly one green, and exactly one blue.
+
+22
+00:01:11,594 --> 00:01:15,545
+There's no way to create more than one color object.
+
+23
+00:01:15,545 --> 00:01:18,299
+There's not any way to define more colors,
+
+24
+00:01:18,299 --> 00:01:21,045
+other than where the enum is declared.
+
+25
+00:01:21,045 --> 00:01:25,375
+The last type of class in Kotlin is a sealed class.
+
+26
+00:01:25,375 --> 00:01:27,064
+A sealed class is special.
+
+27
+00:01:27,064 --> 00:01:29,049
+It's a class that can be subclassed,
+
+28
+00:01:29,049 --> 00:01:32,295
+but only inside the file which it's declared.
+
+29
+00:01:32,295 --> 00:01:36,430
+If you try to subclass it in a different file, you'll get an error.
+
+30
+00:01:36,430 --> 00:01:39,855
+Because the class and subclasses are in the same file,
+
+31
+00:01:39,855 --> 00:01:43,444
+Kotlin will be able to know all subclasses statically,
+
+32
+00:01:43,444 --> 00:01:45,635
+that is at compile time.
+
+33
+00:01:45,635 --> 00:01:48,170
+The compiler can see all of the classes and
+
+34
+00:01:48,170 --> 00:01:51,430
+subclasses and it knows these are all of them.
+
+35
+00:01:51,430 --> 00:01:54,950
+So, the compiler can do extra checks for you.
+
+36
+00:01:54,950 --> 00:01:59,960
+This makes sealed classes a safe way to represent a fixed number of types.
+
+37
+00:01:59,959 --> 00:02:05,004
+They're great for returning success or err from a network API, for example.
+
+38
+00:02:05,004 --> 00:02:07,334
+Let's declare a sealed class.
+
+39
+00:02:07,334 --> 00:02:09,064
+Staying with the fish theme,
+
+40
+00:02:09,064 --> 00:02:10,835
+I'll call this class seal.
+
+41
+00:02:10,835 --> 00:02:12,820
+Seals are not actually fish,
+
+42
+00:02:12,819 --> 00:02:14,669
+but they do eat fish.
+
+43
+00:02:14,669 --> 00:02:17,394
+Now, I can make two subclasses,
+
+44
+00:02:17,395 --> 00:02:19,155
+sea lion and walrus,
+
+45
+00:02:19,155 --> 00:02:20,784
+they're both types of seals.
+
+46
+00:02:20,784 --> 00:02:22,734
+If I wanted to add more seals,
+
+47
+00:02:22,735 --> 00:02:24,565
+I have to put them in this file.
+
+48
+00:02:24,564 --> 00:02:27,460
+I can't sub-class seal in any other file.
+
+49
+00:02:27,460 --> 00:02:29,455
+Since they're all in the same file,
+
+50
+00:02:29,455 --> 00:02:33,084
+Kotlin knows statically about all of the subclasses.
+
+51
+00:02:33,084 --> 00:02:37,090
+I can use a when statement to check what type of seal I have.
+
+52
+00:02:37,090 --> 00:02:40,659
+If I don't match all of the types of seal,
+
+53
+00:02:40,659 --> 00:02:43,329
+Kotlin will give me a compiler error.
+

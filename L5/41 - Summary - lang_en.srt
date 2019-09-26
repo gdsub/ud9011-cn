@@ -1,0 +1,48 @@
+1
+00:00:00,000 --> 00:00:04,485
+All right, we have an aquarium and decorations
+
+2
+00:00:04,485 --> 00:00:09,105
+and equipment and we can take pretty good care of our fish by now.
+
+3
+00:00:09,105 --> 00:00:15,000
+There is just one important thing missing, the fish.
+
+4
+00:00:15,000 --> 00:00:18,984
+It's the fish that we went through all this trouble for.
+
+5
+00:00:18,984 --> 00:00:24,984
+Everything else, while useful and beautiful and fascinating, it's scaffolding.
+
+6
+00:00:24,984 --> 00:00:28,089
+Our course so far is a little bit like this.
+
+7
+00:00:28,089 --> 00:00:31,899
+Everything we learned is fundamental to writing good Kotlin code,
+
+8
+00:00:31,899 --> 00:00:36,454
+but we think that the fish of Kotlin are its functional features.
+
+9
+00:00:36,454 --> 00:00:39,929
+The ability to multiply, change using extensions,
+
+10
+00:00:39,929 --> 00:00:41,179
+which we've already covered,
+
+11
+00:00:41,179 --> 00:00:43,689
+higher order functions, and lambdas.
+
+12
+00:00:43,689 --> 00:00:49,439
+So, we'll see you in the final lesson where there will be lots of fish.
+

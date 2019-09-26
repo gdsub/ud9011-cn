@@ -1,0 +1,176 @@
+1
+00:00:00,000 --> 00:00:02,819
+There are a few steps to get a project setup.
+
+2
+00:00:02,819 --> 00:00:04,740
+If you don't already have a JDK,
+
+3
+00:00:04,740 --> 00:00:07,035
+or Java Development Kit installed,
+
+4
+00:00:07,035 --> 00:00:10,544
+take a moment to install a JDK before you start IntelliJ.
+
+5
+00:00:10,544 --> 00:00:12,629
+When you first start an IntelliJ,
+
+6
+00:00:12,630 --> 00:00:14,610
+you'll have to click through a setup wizard.
+
+7
+00:00:14,609 --> 00:00:17,009
+The default options are mostly spot on.
+
+8
+00:00:17,010 --> 00:00:18,525
+I prefer dark blue theme,
+
+9
+00:00:18,524 --> 00:00:20,564
+but choose the option that you prefer.
+
+10
+00:00:20,565 --> 00:00:22,540
+After you run through the setup wizard,
+
+11
+00:00:22,539 --> 00:00:25,199
+you'll be presented with a welcome screen like this.
+
+12
+00:00:25,199 --> 00:00:27,015
+We'll need to create a Kotlin project,
+
+13
+00:00:27,015 --> 00:00:29,295
+so IntelliJ knows that we're working in Kotlin.
+
+14
+00:00:29,295 --> 00:00:31,440
+To do that, create a project,
+
+15
+00:00:31,440 --> 00:00:34,004
+select Kotlin in the left-hand navigation,
+
+16
+00:00:34,003 --> 00:00:36,719
+select Kotlin/JVM in the right panel,
+
+17
+00:00:36,719 --> 00:00:40,289
+name your project "Hello Kotlin," click Finish.
+
+18
+00:00:40,289 --> 00:00:44,115
+When you're done, you'll have created a project set up to run Kotlin.
+
+19
+00:00:44,115 --> 00:00:46,200
+Now that you're in a project,
+
+20
+00:00:46,200 --> 00:00:50,115
+you can access the Kotlin REPL or read-eval-print loop.
+
+21
+00:00:50,115 --> 00:00:52,289
+In contrast to the compiler,
+
+22
+00:00:52,289 --> 00:00:57,135
+a REPL evaluates the code you're typing in right after you hit Command Enter.
+
+23
+00:00:57,134 --> 00:01:01,875
+You'll find it in Tools, Kotlin, REPL.
+
+24
+00:01:01,875 --> 00:01:06,420
+In good tradition, we start with Hello World.
+
+25
+00:01:06,420 --> 00:01:09,890
+Type or paste the following printHello function code into
+
+26
+00:01:09,890 --> 00:01:15,349
+the REPL and press Control Enter or Command Enter under Mac.
+
+27
+00:01:15,349 --> 00:01:18,659
+The code is also in the notes below the video.
+
+28
+00:01:18,659 --> 00:01:20,579
+To execute the code,
+
+29
+00:01:20,579 --> 00:01:24,789
+type printHello, and Control or Command Enter.
+
+30
+00:01:24,790 --> 00:01:28,615
+Do you see the result? There you have it.
+
+31
+00:01:28,614 --> 00:01:30,878
+You have just written and executed
+
+32
+00:01:30,879 --> 00:01:34,490
+your first piece of Kotlin code. Let's take a look at it.
+
+33
+00:01:34,489 --> 00:01:40,584
+The fun keyword designates a function followed by the name of the function right here.
+
+34
+00:01:40,584 --> 00:01:44,589
+This is followed by a set of parenthesis where the arguments go.
+
+35
+00:01:44,590 --> 00:01:47,359
+This function doesn't have any arguments.
+
+36
+00:01:47,359 --> 00:01:53,489
+Next, we have the curly braces and they frame the function body.
+
+37
+00:01:53,489 --> 00:01:56,864
+Inside a function, we can make calls.
+
+38
+00:01:56,864 --> 00:01:58,859
+This call is for println,
+
+39
+00:01:58,859 --> 00:02:01,590
+which prints one line of text.
+
+40
+00:02:01,590 --> 00:02:04,790
+We are printing the string, "Hello World".
+
+41
+00:02:04,790 --> 00:02:09,599
+You do not have to specify a return type because we're not returning anything in
+
+42
+00:02:09,599 --> 00:02:12,569
+this function and you may notice that there
+
+43
+00:02:12,569 --> 00:02:16,094
+is no punctuation at the end of your statements.
+
+44
+00:02:16,094 --> 00:02:18,370
+No semicolons.
+

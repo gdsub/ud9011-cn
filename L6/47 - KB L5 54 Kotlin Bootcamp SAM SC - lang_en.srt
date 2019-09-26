@@ -1,0 +1,132 @@
+1
+00:00:00,000 --> 00:00:03,120
+It's time to introduce SAM.
+
+2
+00:00:03,120 --> 00:00:05,939
+If you've never heard of SAM, no worries.
+
+3
+00:00:05,940 --> 00:00:08,115
+We will introduce them now.
+
+4
+00:00:08,115 --> 00:00:12,919
+SAM is an acronym for Single Abstract Method.
+
+5
+00:00:12,919 --> 00:00:19,004
+You'll run into SAM all the time in APIs written in the Java programming language.
+
+6
+00:00:19,004 --> 00:00:22,914
+Runnable and callable are two examples.
+
+7
+00:00:22,914 --> 00:00:29,570
+Basically, SAM just means an interface with one method on it. That's it.
+
+8
+00:00:29,570 --> 00:00:33,270
+In this example, runnable has an abstract method,
+
+9
+00:00:33,270 --> 00:00:37,840
+"run", and callable has a single method, "call".
+
+10
+00:00:37,840 --> 00:00:44,605
+In Kotlin, we have to call functions that take SAM as parameters all the time.
+
+11
+00:00:44,604 --> 00:00:49,329
+Here, we can make a function in the Java programming language.
+
+12
+00:00:49,329 --> 00:00:53,109
+Run now as an example of a function that takes
+
+13
+00:00:53,109 --> 00:00:58,539
+a runnable interface as a parameter and executes the run method.
+
+14
+00:00:58,539 --> 00:01:01,554
+If we want to call run now,
+
+15
+00:01:01,554 --> 00:01:05,915
+we can make an object of runnable and implement the run method.
+
+16
+00:01:05,915 --> 00:01:13,605
+This syntax object: class let's you instantiate an object that implements an interface.
+
+17
+00:01:13,605 --> 00:01:17,555
+It's useful for passing parameters like this,
+
+18
+00:01:17,555 --> 00:01:22,860
+not too exciting, but that's a lot of code just to call println.
+
+19
+00:01:22,859 --> 00:01:28,484
+Fortunately, in Kotlin, we can pass a lambda in place of a SAM.
+
+20
+00:01:28,484 --> 00:01:33,295
+Kotlin will take care of making the right kind of object for us.
+
+21
+00:01:33,295 --> 00:01:35,605
+This is really nice.
+
+22
+00:01:35,605 --> 00:01:41,960
+Even cooler if you take the SAM as the last parameter like we do here.
+
+23
+00:01:41,959 --> 00:01:49,039
+You can use the last parameter call syntax to specify the lambda outside of the prints.
+
+24
+00:01:49,040 --> 00:01:52,820
+And that's all I've got to say about SAM.
+
+25
+00:01:52,819 --> 00:01:58,939
+Writing your own extensions and higher-order functions is a lot of fun.
+
+26
+00:01:58,939 --> 00:02:04,504
+However, we've mentioned the Standard Library many times throughout this course.
+
+27
+00:02:04,504 --> 00:02:06,515
+Before you write your own,
+
+28
+00:02:06,515 --> 00:02:11,715
+always check the Standard Library to see if someone has saved you some work.
+
+29
+00:02:11,715 --> 00:02:16,659
+Studying the Standard Library is also a great way of finding out all of
+
+30
+00:02:16,659 --> 00:02:21,530
+the many features of Kotlin that we did not have time to touch in this course,
+
+31
+00:02:21,530 --> 00:02:25,729
+and new functionality is added frequently.
+
+32
+00:02:25,729 --> 00:02:30,009
+In the notes below is a link for all of the packages,
+
+33
+00:02:30,009 --> 00:02:33,870
+extensions, and utilities of the Standard Library.
+

@@ -1,0 +1,224 @@
+1
+00:00:00,000 --> 00:00:02,789
+If we take a look at our Aquarium class,
+
+2
+00:00:02,789 --> 00:00:08,894
+we can see that the generic type is only ever returned by the property water supply.
+
+3
+00:00:08,894 --> 00:00:15,059
+We didn't define any functions that take a value of type t as a parameter.
+
+4
+00:00:15,060 --> 00:00:19,875
+Kotlin let's us define out types for exactly this case.
+
+5
+00:00:19,875 --> 00:00:25,379
+Out types are type parameters that only ever occur in return values of functions,
+
+6
+00:00:25,379 --> 00:00:27,704
+or on Val properties.
+
+7
+00:00:27,704 --> 00:00:32,114
+If we try to pass an out type as a parameter to a function,
+
+8
+00:00:32,115 --> 00:00:35,130
+Kotlin will give us a compiler error.
+
+9
+00:00:35,130 --> 00:00:38,365
+Once we make a generic type and out type,
+
+10
+00:00:38,365 --> 00:00:44,185
+Kotlin can infer extra information about where our types are safe to use.
+
+11
+00:00:44,185 --> 00:00:47,275
+For example, let's declare a function,
+
+12
+00:00:47,274 --> 00:00:52,030
+addItemTo that expects an aquarium of water supply.
+
+13
+00:00:52,030 --> 00:00:56,125
+We can call addItemTo on an aquarium of tap water.
+
+14
+00:00:56,125 --> 00:01:01,719
+Kotlin can ensure that addItemTo won't do anything unsafe with a generic,
+
+15
+00:01:01,719 --> 00:01:05,019
+because it's declared as an out type.
+
+16
+00:01:05,019 --> 00:01:08,795
+If we made the type t not be an out type,
+
+17
+00:01:08,795 --> 00:01:13,594
+we see that Kotlin gives us a compiler error when calling addItemTo.
+
+18
+00:01:13,594 --> 00:01:17,789
+Kotlin does this because it can't ensure we're using it safely.
+
+19
+00:01:17,790 --> 00:01:22,365
+In types are from the same school as out types.
+
+20
+00:01:22,364 --> 00:01:29,144
+In types can be used anytime the generic is only used as an argument to functions.
+
+21
+00:01:29,144 --> 00:01:34,545
+More specifically, in types can only be passed into an object.
+
+22
+00:01:34,545 --> 00:01:39,465
+Out types can only be passed out of an object or returned.
+
+23
+00:01:39,465 --> 00:01:42,615
+There's one special time you can pass an out type.
+
+24
+00:01:42,614 --> 00:01:45,765
+Constructors can take out types as arguments,
+
+25
+00:01:45,765 --> 00:01:47,849
+but functions never can.
+
+26
+00:01:47,849 --> 00:01:50,250
+The compiler will enforce this.
+
+27
+00:01:50,250 --> 00:01:54,405
+If we try to return an in type, we'll get an error.
+
+28
+00:01:54,405 --> 00:01:58,200
+As an example, honestly a bit contrived,
+
+29
+00:01:58,200 --> 00:01:59,640
+let's say we wanted to make
+
+30
+00:01:59,640 --> 00:02:03,674
+an interface cleaner that let's us clean different water supplies.
+
+31
+00:02:03,674 --> 00:02:07,605
+We'll give cleaner a generic t that's a water supply,
+
+32
+00:02:07,605 --> 00:02:11,564
+and since we're only ever using t as an argument to clean,
+
+33
+00:02:11,564 --> 00:02:14,055
+we can make it an in type.
+
+34
+00:02:14,055 --> 00:02:16,425
+To use the cleaner interface,
+
+35
+00:02:16,425 --> 00:02:19,500
+we'll make a class tap water cleaner that
+
+36
+00:02:19,500 --> 00:02:23,594
+implements cleaner for cleaning tap water by adding chemicals.
+
+37
+00:02:23,594 --> 00:02:26,055
+Now, in our Aquarium class,
+
+38
+00:02:26,055 --> 00:02:29,955
+we can update add water to take a cleaner of type T,
+
+39
+00:02:29,955 --> 00:02:33,600
+and we can now clean the water before we add it.
+
+40
+00:02:33,599 --> 00:02:35,729
+Kotlin will figure out what this means,
+
+41
+00:02:35,729 --> 00:02:38,489
+and make sure your generics usage is safe.
+
+42
+00:02:38,490 --> 00:02:41,820
+Now, when a water supply needs processed,
+
+43
+00:02:41,819 --> 00:02:44,204
+we can use cleaner to clean it.
+
+44
+00:02:44,205 --> 00:02:47,969
+Finally, we can use our aquarium like this,
+
+45
+00:02:47,969 --> 00:02:50,025
+make a new tap water cleaner,
+
+46
+00:02:50,025 --> 00:02:52,365
+then make a new aquarium of tap water.
+
+47
+00:02:52,365 --> 00:02:54,045
+When we call add water,
+
+48
+00:02:54,044 --> 00:02:56,504
+we'll pass the cleaner to add water.
+
+49
+00:02:56,504 --> 00:03:00,194
+Out and in are really easy to remember.
+
+50
+00:03:00,194 --> 00:03:02,919
+Out types can be used as return values,
+
+51
+00:03:02,919 --> 00:03:05,734
+and in types can be used as parameters.
+
+52
+00:03:05,735 --> 00:03:12,565
+The IDE will suggest you add out or in to your generic types when it's correct to do so.
+
+53
+00:03:12,564 --> 00:03:14,454
+So, if you forget,
+
+54
+00:03:14,455 --> 00:03:17,750
+look for the warning to add out and in.
+
+55
+00:03:17,750 --> 00:03:21,819
+If you want to dig into the sort of problems that they solve,
+
+56
+00:03:21,819 --> 00:03:24,530
+the documentation covers them in depth.
+

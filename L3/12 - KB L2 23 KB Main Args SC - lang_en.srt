@@ -1,0 +1,136 @@
+1
+00:00:00,000 --> 00:00:03,734
+To demonstrate how to run main with arguments,
+
+2
+00:00:03,734 --> 00:00:07,004
+we can pass to maine whom to say hello to.
+
+3
+00:00:07,004 --> 00:00:10,560
+Select Run, Edit Configurations,
+
+4
+00:00:10,560 --> 00:00:13,695
+type Kotlin for the program arguments,
+
+5
+00:00:13,695 --> 00:00:16,530
+and close the configurations window.
+
+6
+00:00:16,530 --> 00:00:20,010
+Then, change your code to use the argument.
+
+7
+00:00:20,010 --> 00:00:24,675
+Replace world with a dollar sign to start a string template.
+
+8
+00:00:24,675 --> 00:00:26,190
+In a string template,
+
+9
+00:00:26,190 --> 00:00:27,780
+instead of a string,
+
+10
+00:00:27,780 --> 00:00:30,630
+you put instructions for how to get a string,
+
+11
+00:00:30,629 --> 00:00:32,070
+either from a variable,
+
+12
+00:00:32,070 --> 00:00:33,479
+or from an expression.
+
+13
+00:00:33,479 --> 00:00:39,914
+The current value of the expression after the dollar sign will be inserted for printing.
+
+14
+00:00:39,914 --> 00:00:45,060
+In this example, it should be the value of the zeros argument to main,
+
+15
+00:00:45,060 --> 00:00:48,719
+args[0], which is Kotlin.
+
+16
+00:00:48,719 --> 00:00:51,750
+So, we get the value of args[0],
+
+17
+00:00:51,750 --> 00:00:53,924
+and put it inside curly braces.
+
+18
+00:00:53,924 --> 00:00:57,074
+We need to put args[0] inside curly braces,
+
+19
+00:00:57,075 --> 00:00:58,905
+because it's not a value.
+
+20
+00:00:58,905 --> 00:01:02,774
+Fetching the first element in the array is an expression.
+
+21
+00:01:02,774 --> 00:01:04,905
+Some other languages have statements,
+
+22
+00:01:04,905 --> 00:01:07,364
+which are lines of code that don't have a value.
+
+23
+00:01:07,364 --> 00:01:10,140
+In Kotlin, almost everything has a value,
+
+24
+00:01:10,140 --> 00:01:11,685
+even if that value is unit.
+
+25
+00:01:11,685 --> 00:01:13,290
+In programming language lingo,
+
+26
+00:01:13,290 --> 00:01:15,830
+we say that everything in Kotlin is an expression.
+
+27
+00:01:15,829 --> 00:01:18,670
+This is really cool, because it means for example,
+
+28
+00:01:18,670 --> 00:01:23,010
+you can use the value of an 'if' expression right away.
+
+29
+00:01:23,010 --> 00:01:26,790
+No need to make an extra variable to figure out which branch was taken.
+
+30
+00:01:26,790 --> 00:01:31,140
+So, for example we can assign an 'if' statement to a variable,
+
+31
+00:01:31,140 --> 00:01:33,450
+or even use it as a string template.
+
+32
+00:01:33,450 --> 00:01:36,210
+Here, we're checking the temperature to say a fish is
+
+33
+00:01:36,209 --> 00:01:39,149
+fried or safe based on the temperature,
+
+34
+00:01:39,150 --> 00:01:42,640
+and if we print that out, we'll see the fish is safe.
+

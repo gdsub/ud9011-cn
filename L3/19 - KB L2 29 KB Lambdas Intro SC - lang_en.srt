@@ -1,0 +1,332 @@
+1
+00:00:00,050 --> 00:00:04,229
+So far, we've looked at named function declarations.
+
+2
+00:00:04,230 --> 00:00:07,005
+That is, each function has a name.
+
+3
+00:00:07,004 --> 00:00:10,919
+They look similar to functions in almost every programming language.
+
+4
+00:00:10,919 --> 00:00:13,109
+There's a fun keyword that says,
+
+5
+00:00:13,109 --> 00:00:15,000
+I'm about to declare a function.
+
+6
+00:00:15,000 --> 00:00:17,024
+It's followed by a name literal,
+
+7
+00:00:17,024 --> 00:00:18,629
+in this case swim,
+
+8
+00:00:18,629 --> 00:00:20,518
+that will never change.
+
+9
+00:00:20,518 --> 00:00:25,799
+Finally, it has a function body that says what to do when calling it.
+
+10
+00:00:25,800 --> 00:00:28,469
+This is all pretty basic stuff.
+
+11
+00:00:28,469 --> 00:00:31,619
+Kotlin also supports lambdas,
+
+12
+00:00:31,620 --> 00:00:34,980
+in other languages these are called anonymous
+
+13
+00:00:34,979 --> 00:00:39,839
+functions or function literals or similar names.
+
+14
+00:00:39,840 --> 00:00:42,735
+In Kotlin we call them Lambdas.
+
+15
+00:00:42,734 --> 00:00:46,185
+A Lambda is an expression that makes a function.
+
+16
+00:00:46,185 --> 00:00:48,929
+Instead of declaring a named function,
+
+17
+00:00:48,929 --> 00:00:51,494
+we declare a function that has no name.
+
+18
+00:00:51,494 --> 00:00:54,494
+Let's define a function with no name in REPL,
+
+19
+00:00:54,494 --> 00:00:57,159
+just to see the syntax.
+
+20
+00:00:59,179 --> 00:01:03,000
+A lambda is always surrounded by curly brackets in
+
+21
+00:01:03,000 --> 00:01:06,855
+Kotlin and since it's a function we can call it.
+
+22
+00:01:06,855 --> 00:01:12,045
+Of course, making a lambda and not doing anything with it isn't very useful.
+
+23
+00:01:12,045 --> 00:01:14,525
+Let's see what else we can do,
+
+24
+00:01:14,525 --> 00:01:20,484
+we can declare a variable called swim and assign it to a lambda.
+
+25
+00:01:20,484 --> 00:01:25,899
+Once we do that, we can call it just like a regular function,
+
+26
+00:01:25,899 --> 00:01:30,760
+by calling swim parents.
+
+27
+00:01:30,760 --> 00:01:34,775
+Lambdas can take arguments just like named functions.
+
+28
+00:01:34,775 --> 00:01:39,430
+Lambda arguments go on the left hand side of what's called a function arrow.
+
+29
+00:01:39,430 --> 00:01:43,585
+The body of the lambda goes after the function arrow.
+
+30
+00:01:43,584 --> 00:01:47,709
+So, this lambda function takes an int value as
+
+31
+00:01:47,709 --> 00:01:53,169
+an argument and returns the result of dividing it by two.
+
+32
+00:01:54,829 --> 00:01:59,765
+Closely related to lambda's is Kotlin syntax for function types.
+
+33
+00:01:59,765 --> 00:02:02,609
+You can use this syntax to clean we declare a variable,
+
+34
+00:02:02,609 --> 00:02:04,185
+that will hold the function.
+
+35
+00:02:04,185 --> 00:02:08,039
+In this case, we're saying make a variable waterFilter,
+
+36
+00:02:08,039 --> 00:02:12,659
+waterFilter can be any function that takes an int and returns an int.
+
+37
+00:02:12,659 --> 00:02:14,939
+Then we assign it to a lambda,
+
+38
+00:02:14,939 --> 00:02:19,020
+then note that we don't have to specify the type of the lambda argument anymore,
+
+39
+00:02:19,020 --> 00:02:21,015
+it's calculated by type inference.
+
+40
+00:02:21,014 --> 00:02:24,599
+Finally, return the value of dirty divided by two.
+
+41
+00:02:24,599 --> 00:02:27,669
+Of course, our fish make the aquarium dirty when they eat.
+
+42
+00:02:27,669 --> 00:02:32,125
+Let's make a similar function feedFish that makes the tank dirtier.
+
+43
+00:02:32,125 --> 00:02:37,180
+So far, we've just been using lambda to declare functions in a kind of weird way.
+
+44
+00:02:37,180 --> 00:02:40,560
+The real power of lambda happens when we make higher-order functions.
+
+45
+00:02:40,560 --> 00:02:42,430
+A higher-order function is really
+
+46
+00:02:42,430 --> 00:02:45,735
+just any function that takes a function as the argument.
+
+47
+00:02:45,735 --> 00:02:48,550
+Let's make one now,
+
+48
+00:02:48,550 --> 00:02:50,610
+updateDirty takes two parameters.
+
+49
+00:02:50,610 --> 00:02:57,230
+The first parameter is just an int and the second parameter is a function of int to int.
+
+50
+00:02:58,710 --> 00:03:02,140
+Finally, in the body of updateDirty we'll
+
+51
+00:03:02,139 --> 00:03:05,184
+just call the function we were past and return its value.
+
+52
+00:03:05,185 --> 00:03:08,979
+Note that operation has a function type just like we were using on
+
+53
+00:03:08,979 --> 00:03:13,554
+the variables and it's also important that operation is the last parameter.
+
+54
+00:03:13,555 --> 00:03:17,485
+Kotlin prefers function arguments to be the last parameter.
+
+55
+00:03:17,485 --> 00:03:21,620
+Now, our aquarium management system needs a dirty processor.
+
+56
+00:03:21,620 --> 00:03:25,939
+So, we'll make a new function and call it from feedTheFish.
+
+57
+00:03:29,520 --> 00:03:32,199
+Filling in dirty processor,
+
+58
+00:03:32,199 --> 00:03:37,225
+we can call updateDirty exactly like you'd expect, parsing waterFilter directly.
+
+59
+00:03:37,224 --> 00:03:39,984
+Now, let's parse feedFish to UpdateDirty.
+
+60
+00:03:39,985 --> 00:03:43,080
+Since feedFish is a name function and not a lambda,
+
+61
+00:03:43,080 --> 00:03:46,190
+you'll need to use a double colon to parse it.
+
+62
+00:03:46,439 --> 00:03:50,319
+This way Kotlin knows you're not trying to call feedFish,
+
+63
+00:03:50,319 --> 00:03:52,329
+and it let you parse a reference.
+
+64
+00:03:52,330 --> 00:03:55,210
+When you combine higher-order functions with lambdas,
+
+65
+00:03:55,210 --> 00:03:57,070
+Kotlin has a special syntax,
+
+66
+00:03:57,069 --> 00:03:59,500
+it's called the last parameter called syntax.
+
+67
+00:03:59,500 --> 00:04:01,485
+Here we call updateDirty again,
+
+68
+00:04:01,485 --> 00:04:06,025
+but this time we parse a lambda as an argument for the parameter operation.
+
+69
+00:04:06,025 --> 00:04:08,004
+What's really interesting here,
+
+70
+00:04:08,004 --> 00:04:10,579
+a lambda is an argument to updateDirty,
+
+71
+00:04:10,580 --> 00:04:12,910
+but since we're parsing it as the last parameter,
+
+72
+00:04:12,909 --> 00:04:15,564
+we don't have to put it inside the function parentheses.
+
+73
+00:04:15,564 --> 00:04:17,665
+To really show you what's going on,
+
+74
+00:04:17,665 --> 00:04:20,110
+you can put the parents back in.
+
+75
+00:04:20,110 --> 00:04:25,030
+Here you can see we're just parsing the lambda as an argument updateDirty.
+
+76
+00:04:25,029 --> 00:04:27,219
+Using this syntax, we can define
+
+77
+00:04:27,220 --> 00:04:30,505
+functions that look like they're built-in to the language.
+
+78
+00:04:30,504 --> 00:04:37,089
+Actually, you've already used a few higher-order functions from the standard library.
+
+79
+00:04:37,089 --> 00:04:40,479
+The filter function we used in the last section
+
+80
+00:04:40,480 --> 00:04:44,230
+takes a lambda and uses it to filter a list.
+
+81
+00:04:44,230 --> 00:04:47,155
+Repeat is also just a function.
+
+82
+00:04:47,154 --> 00:04:50,289
+Is defined in the standard library and it
+
+83
+00:04:50,290 --> 00:04:54,860
+takes a repeat count and a lambda that is repeated.
+

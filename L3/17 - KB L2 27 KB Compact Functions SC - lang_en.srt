@@ -1,0 +1,348 @@
+1
+00:00:00,000 --> 00:00:02,084
+Welcome back.
+
+2
+00:00:02,084 --> 00:00:07,169
+I filled int with ChangeWater using a when statement value [inaudible].
+
+3
+00:00:07,169 --> 00:00:11,144
+I'm using a when statement here without a parameter for the when.
+
+4
+00:00:11,144 --> 00:00:14,224
+This works because with no parameter,
+
+5
+00:00:14,224 --> 00:00:17,905
+when acts as a sequence of if-else if checks.
+
+6
+00:00:17,905 --> 00:00:23,275
+This code reads, when temperature is greater than 30, return true.
+
+7
+00:00:23,274 --> 00:00:27,884
+Else, if dirty is greater than 30, return true.
+
+8
+00:00:27,885 --> 00:00:30,375
+Else, if it's Sunday,
+
+9
+00:00:30,375 --> 00:00:34,229
+return true, and else, return false.
+
+10
+00:00:34,229 --> 00:00:37,299
+This shouldChangeWater function works correctly,
+
+11
+00:00:37,299 --> 00:00:40,640
+but there is a lot of logic built into this when statement.
+
+12
+00:00:40,640 --> 00:00:43,000
+In Kotlin, you can do most things in
+
+13
+00:00:43,000 --> 00:00:46,314
+more than one way and some of those ways are unique to Kotlin.
+
+14
+00:00:46,314 --> 00:00:50,554
+So, let's see how we can improve or Kotlinize this function.
+
+15
+00:00:50,554 --> 00:00:54,469
+Another way we could write this function is to specify variables that
+
+16
+00:00:54,469 --> 00:00:58,984
+provide a name for each logic test at the beginning of the function body.
+
+17
+00:00:58,984 --> 00:01:02,719
+Let's give them a good name that indicates what we are testing.
+
+18
+00:01:02,719 --> 00:01:07,284
+Then assign the result of the tests to the variables,
+
+19
+00:01:07,284 --> 00:01:11,274
+isTooHot has the value of temperature larger than 30,
+
+20
+00:01:11,275 --> 00:01:14,590
+isDirty gets the result of testing Dirty,
+
+21
+00:01:14,590 --> 00:01:18,320
+and isSunday gets the result of that test.
+
+22
+00:01:18,319 --> 00:01:21,214
+Then in the when statement,
+
+23
+00:01:21,215 --> 00:01:26,195
+we can use the variables which makes it read like a list of statements.
+
+24
+00:01:26,194 --> 00:01:30,984
+We can use the same ideas to create functions in a single line.
+
+25
+00:01:30,984 --> 00:01:34,429
+For isTooHot, turn it into a function using
+
+26
+00:01:34,430 --> 00:01:38,310
+the fun keyword and passing the temperature as an argument.
+
+27
+00:01:38,310 --> 00:01:41,900
+We specify Boolean as the return type followed by
+
+28
+00:01:41,900 --> 00:01:46,280
+an equal sign and a one-line function body to check the temperature.
+
+29
+00:01:46,280 --> 00:01:50,045
+Because the return type can be inferred from the function,
+
+30
+00:01:50,045 --> 00:01:51,515
+we don't need it here.
+
+31
+00:01:51,515 --> 00:01:56,194
+The name of the function gives a hint to the reader about the expected return value.
+
+32
+00:01:56,194 --> 00:02:01,189
+You can declare functions this way whenever they have a single expression in their body.
+
+33
+00:02:01,189 --> 00:02:06,834
+Here is the code for isDirty and here is the code for isSunday.
+
+34
+00:02:06,834 --> 00:02:11,685
+Now, we can call these functions with an argument in the when statement.
+
+35
+00:02:11,685 --> 00:02:14,370
+Using this one-line function syntax,
+
+36
+00:02:14,370 --> 00:02:16,530
+you can simplify helper functions.
+
+37
+00:02:16,530 --> 00:02:20,354
+So it's a good idea to use them liberally in your code base.
+
+38
+00:02:20,354 --> 00:02:22,349
+If we run the program again,
+
+39
+00:02:22,349 --> 00:02:28,254
+it should output check the water every Sunday and randomly on other days.
+
+40
+00:02:28,254 --> 00:02:32,384
+One cool thing you can do with what we've just learned about functions is that
+
+41
+00:02:32,384 --> 00:02:35,789
+instead of assigning a fixed value as the default parameter,
+
+42
+00:02:35,789 --> 00:02:39,584
+you can assign a function whose return value becomes the default parameter.
+
+43
+00:02:39,585 --> 00:02:41,310
+Let's say that in the meantime,
+
+44
+00:02:41,310 --> 00:02:44,610
+our hardware team has built the first prototype of the dirty sensor.
+
+45
+00:02:44,610 --> 00:02:49,125
+We can define a function getDirtySensorReading that returns the sensor reading.
+
+46
+00:02:49,125 --> 00:02:52,560
+Now of course, this prototype only returns 20.
+
+47
+00:02:52,560 --> 00:02:57,224
+But they've promised us that the next version will support values all the way up to 42.
+
+48
+00:02:57,224 --> 00:03:00,134
+We can still set the value when we call the function.
+
+49
+00:03:00,134 --> 00:03:02,579
+That way, when the hardware team ships the new sensor,
+
+50
+00:03:02,580 --> 00:03:06,090
+they can just pass in the new one to replace our default argument.
+
+51
+00:03:06,090 --> 00:03:08,280
+Sometimes, you might be tempted to use
+
+52
+00:03:08,280 --> 00:03:11,189
+expensive functions to initialize default parameters.
+
+53
+00:03:11,189 --> 00:03:15,870
+Examples of expensive operations include reading files or allocating a lot of memory.
+
+54
+00:03:15,870 --> 00:03:19,560
+Be careful with this. They can affect the performance of your code quite a bit
+
+55
+00:03:19,560 --> 00:03:24,284
+because default parameters are evaluated at call time by Kotlin.
+
+56
+00:03:24,284 --> 00:03:27,639
+Here's an example of a function with an expensive default argument.
+
+57
+00:03:27,639 --> 00:03:31,125
+They can slow your app and has the potential for out-of-memory errors.
+
+58
+00:03:31,125 --> 00:03:35,610
+When called, you can pass in an existing aquarium but if you don't,
+
+59
+00:03:35,610 --> 00:03:40,590
+by default, it builds an entirely new aquarium which obviously takes a long time.
+
+60
+00:03:40,590 --> 00:03:42,479
+So, every time you call
+
+61
+00:03:42,479 --> 00:03:45,974
+aquariumStatusReport without passing a value for the aquarium argument,
+
+62
+00:03:45,974 --> 00:03:47,564
+a new aquarium will be made.
+
+63
+00:03:47,564 --> 00:03:50,939
+As a result, the report will probably take longer to produce,
+
+64
+00:03:50,939 --> 00:03:52,530
+be wrong most of the time,
+
+65
+00:03:52,530 --> 00:03:55,020
+and if you ask for a lot of reports,
+
+66
+00:03:55,020 --> 00:03:57,689
+the program will run out of memory and crash.
+
+67
+00:03:57,689 --> 00:03:59,689
+Did you notice the Any type for aquarium?
+
+68
+00:03:59,689 --> 00:04:01,694
+We're going to talk about that in the next lesson,
+
+69
+00:04:01,694 --> 00:04:06,044
+but for now, it's worth noting Any can hold any type of object.
+
+70
+00:04:06,044 --> 00:04:11,414
+For this section, we've done all of our control-flow logic using when statements.
+
+71
+00:04:11,414 --> 00:04:14,009
+But remember that Kotlin also comes with
+
+72
+00:04:14,009 --> 00:04:17,969
+all the basic structural programming operators that you're used to.
+
+73
+00:04:17,970 --> 00:04:23,880
+We saw if-else and for loops in lesson one and you can use while statements also.
+
+74
+00:04:23,879 --> 00:04:27,009
+In addition to these basic control flow operators,
+
+75
+00:04:27,009 --> 00:04:32,810
+you can find several control flow-like functions in the standard library, such as repeat.
+
+76
+00:04:32,810 --> 00:04:36,415
+The Kotlin standard library provides living essentials for
+
+77
+00:04:36,415 --> 00:04:41,275
+everyday work with Kotlin and we'll talk about it more in lesson five.
+
+78
+00:04:41,274 --> 00:04:43,149
+I do want to mention quickly,
+
+79
+00:04:43,149 --> 00:04:46,469
+while almost everything in Kotlin is an expression with a value,
+
+80
+00:04:46,470 --> 00:04:48,180
+there are a few exceptions.
+
+81
+00:04:48,180 --> 00:04:51,060
+There's no sensible value for while loops or for loops,
+
+82
+00:04:51,060 --> 00:04:52,589
+so they don't have any value.
+
+83
+00:04:52,589 --> 00:04:54,774
+If you try to assign a for loop to a variable,
+
+84
+00:04:54,774 --> 00:04:56,875
+you'll get an error saying it's a statement.
+
+85
+00:04:56,875 --> 00:04:58,810
+There are few other statements in Kotlin,
+
+86
+00:04:58,810 --> 00:05:01,410
+but honestly, you won't notice them during normal programming.
+
+87
+00:05:01,410 --> 00:05:05,950
+You can find the grammar on kotlinlang.org if you want to dig in more.
+

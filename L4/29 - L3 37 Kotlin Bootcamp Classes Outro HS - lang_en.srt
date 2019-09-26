@@ -1,0 +1,60 @@
+1
+00:00:00,000 --> 00:00:03,285
+Wow, this was a hefty class.
+
+2
+00:00:03,285 --> 00:00:05,974
+Let's get up and do some stretches.
+
+3
+00:00:05,974 --> 00:00:09,594
+I wonder, do fish do stretches?
+
+4
+00:00:09,595 --> 00:00:13,780
+What kind of stretches do you think fish would do?
+
+5
+00:00:15,640 --> 00:00:17,995
+So, in this lesson,
+
+6
+00:00:17,995 --> 00:00:23,164
+we learned Kotlin's way of doing object-oriented programming with classes,
+
+7
+00:00:23,164 --> 00:00:25,859
+abstract classes, and interfaces,
+
+8
+00:00:25,859 --> 00:00:29,579
+and we added bits and pieces to your aquarium.
+
+9
+00:00:29,579 --> 00:00:35,030
+I think the best thing you can do for yourself after this lesson is practice.
+
+10
+00:00:35,030 --> 00:00:37,570
+Have some fun, write some code,
+
+11
+00:00:37,570 --> 00:00:40,795
+whether it's turning this example into coherent program,
+
+12
+00:00:40,795 --> 00:00:43,600
+or writing that game you've been putting off,
+
+13
+00:00:43,600 --> 00:00:46,960
+and then come back for the next lesson where we'll have
+
+14
+00:00:46,960 --> 00:00:50,564
+a whole basket of Kotlin goodness for you, including-
+
+15
+00:00:50,564 --> 00:00:54,280
+Constants, collections, and generics.
+

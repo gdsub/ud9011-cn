@@ -1,0 +1,140 @@
+1
+00:00:00,000 --> 00:00:03,855
+Inheritance in Kotlin works pretty much as you'd expect,
+
+2
+00:00:03,855 --> 00:00:06,870
+if you've used a class-based language before.
+
+3
+00:00:06,870 --> 00:00:09,554
+But, there are some differences.
+
+4
+00:00:09,554 --> 00:00:15,390
+Let's say we want to have a different type of aquarium such as a cylindrical tower.
+
+5
+00:00:15,390 --> 00:00:18,824
+Tower tanks are a lot like regular aquariums,
+
+6
+00:00:18,824 --> 00:00:21,884
+but they are also different in some ways.
+
+7
+00:00:21,885 --> 00:00:26,025
+So,we couldn't inherit a lot of stuff from our basic aquarium,
+
+8
+00:00:26,024 --> 00:00:28,500
+and change to things that are different.
+
+9
+00:00:28,500 --> 00:00:30,704
+Let's do that in Kotlin.
+
+10
+00:00:30,704 --> 00:00:33,734
+Here is our original aquarium class.
+
+11
+00:00:33,734 --> 00:00:35,954
+It doesn't say explicitly,
+
+12
+00:00:35,954 --> 00:00:40,155
+but this class actually inherits from the top level class 'Any'.
+
+13
+00:00:40,155 --> 00:00:43,649
+You could add colon 'Any' to the declaration.
+
+14
+00:00:43,649 --> 00:00:47,820
+But, it's not required and doesn't give you anything extra.
+
+15
+00:00:47,820 --> 00:00:51,825
+The first thing we have to do to be able to inherit from a class,
+
+16
+00:00:51,825 --> 00:00:53,820
+is make the class open.
+
+17
+00:00:53,820 --> 00:00:56,984
+By default, classes are not subclassible.
+
+18
+00:00:56,984 --> 00:00:59,445
+We have to explicitly allow it.
+
+19
+00:00:59,445 --> 00:01:02,744
+Now, in the same file is ok,
+
+20
+00:01:02,744 --> 00:01:07,950
+we can create a class tower tank that inherits from aquarium.
+
+21
+00:01:07,950 --> 00:01:13,409
+We specify the inheritance or the parent class, after the colon.
+
+22
+00:01:13,409 --> 00:01:15,869
+We need to change how the volume is
+
+23
+00:01:15,870 --> 00:01:20,945
+calculated and we don't want to fill as much water into the tall tank.
+
+24
+00:01:20,944 --> 00:01:25,904
+We are doing this by overriding the water property in tower tank.
+
+25
+00:01:25,905 --> 00:01:30,480
+We also need to override the get function for the volume.
+
+26
+00:01:30,480 --> 00:01:33,480
+We're going to need to multiply by pi,
+
+27
+00:01:33,480 --> 00:01:34,890
+which we input from
+
+28
+00:01:34,890 --> 00:01:38,530
+the math library and then
+
+29
+00:01:38,530 --> 00:01:42,894
+convert the result to an integer because the water is an integer.
+
+30
+00:01:42,894 --> 00:01:45,774
+This leaves us with errors.
+
+31
+00:01:45,775 --> 00:01:48,520
+It's because, just like classes,
+
+32
+00:01:48,519 --> 00:01:52,435
+members are not available for subclassing by default.
+
+33
+00:01:52,435 --> 00:01:58,450
+This is so we don't accidentally leak implementation details without meaning to.
+
+34
+00:01:58,450 --> 00:02:03,295
+So, let's make water and volume open,
+
+35
+00:02:03,295 --> 00:02:05,730
+and all the errors are gone.
+

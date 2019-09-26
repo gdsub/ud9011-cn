@@ -1,0 +1,52 @@
+1
+00:00:00,000 --> 00:00:03,705
+And that's that, the end of Kotlin bootcamp.
+
+2
+00:00:03,705 --> 00:00:07,050
+The end of the beginning of your journey with Kotlin.
+
+3
+00:00:07,049 --> 00:00:10,875
+We've covered everything from the very basics of operations,
+
+4
+00:00:10,875 --> 00:00:13,500
+to the very Kotlin-specific Lambdas.
+
+5
+00:00:13,500 --> 00:00:17,969
+We hope you enjoy accomplishing more functionality writing less code.
+
+6
+00:00:17,969 --> 00:00:22,154
+We hope you are a little bit excited about this cool language,
+
+7
+00:00:22,155 --> 00:00:24,565
+and we hope you had fun.
+
+8
+00:00:24,565 --> 00:00:27,339
+We've touched on everything you need to start
+
+9
+00:00:27,339 --> 00:00:30,384
+building your own apps and explore on your own.
+
+10
+00:00:30,385 --> 00:00:35,090
+There's definitely so much more and it's best to learn that as you need it.
+
+11
+00:00:35,090 --> 00:00:39,130
+The best way to become a Kotlin expert is through practice.
+
+12
+00:00:39,130 --> 00:00:42,600
+So go, make your own aquarium.
+
+13
+00:00:42,600 --> 00:00:44,039
+In Kotlin.
+

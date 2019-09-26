@@ -1,0 +1,96 @@
+1
+00:00:00,000 --> 00:00:02,940
+Of course, we have strings in Kotlin,
+
+2
+00:00:02,940 --> 00:00:06,355
+and they were pretty much like strings in any other language.
+
+3
+00:00:06,355 --> 00:00:10,155
+You can concatenate strings using plus,
+
+4
+00:00:10,154 --> 00:00:13,139
+but even better you can use string templates to
+
+5
+00:00:13,140 --> 00:00:16,320
+build strings by combining them with values.
+
+6
+00:00:16,320 --> 00:00:21,390
+The dollar variable name is replaced by text representing its value.
+
+7
+00:00:21,390 --> 00:00:24,000
+And as a preview of things to come,
+
+8
+00:00:24,000 --> 00:00:26,245
+you can also do this.
+
+9
+00:00:26,245 --> 00:00:29,089
+The two numbers get added first,
+
+10
+00:00:29,089 --> 00:00:31,495
+and the result is printed.
+
+11
+00:00:31,495 --> 00:00:36,859
+Like other languages, Kotlin has a Boolean data type and operators.
+
+12
+00:00:36,859 --> 00:00:41,700
+Two equal sign equals a by value comparison,
+
+13
+00:00:41,700 --> 00:00:44,700
+and of course, you have not equal, greater,
+
+14
+00:00:44,700 --> 00:00:49,040
+smaller or equal operators just like in other languages.
+
+15
+00:00:49,039 --> 00:00:52,030
+Now that we can get to the truth of matters,
+
+16
+00:00:52,030 --> 00:00:53,965
+we can test for conditions.
+
+17
+00:00:53,965 --> 00:00:58,740
+The two basic ones in Kotlin are if-else and when.
+
+18
+00:00:58,740 --> 00:01:01,940
+If-else is for comparing values.
+
+19
+00:01:01,939 --> 00:01:05,609
+Equal Kotlin thing is that you can be more flexible about
+
+20
+00:01:05,609 --> 00:01:09,135
+your conditions by using ranges, like so.
+
+21
+00:01:09,135 --> 00:01:11,325
+We'll see more ranges in a moment,
+
+22
+00:01:11,325 --> 00:01:15,105
+and when, which is Kotlin's way of doing switching.
+
+23
+00:01:15,105 --> 00:01:18,969
+You can of course nest ifs and whens to your heart's delight,
+
+24
+00:01:18,969 --> 00:01:21,959
+and again, you can use ranges.
+

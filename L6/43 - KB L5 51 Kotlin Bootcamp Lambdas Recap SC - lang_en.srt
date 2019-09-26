@@ -1,0 +1,120 @@
+1
+00:00:00,000 --> 00:00:03,660
+Let's recap and do an example in REPL.
+
+2
+00:00:03,660 --> 00:00:06,929
+Restart REPL to start from a clean slate.
+
+3
+00:00:06,929 --> 00:00:09,629
+A lambda is an anonymous function,
+
+4
+00:00:09,630 --> 00:00:11,880
+a function without a name.
+
+5
+00:00:11,880 --> 00:00:14,839
+We can assign lambda to a variable,
+
+6
+00:00:14,839 --> 00:00:18,160
+waterFilter, with an argument,
+
+7
+00:00:18,160 --> 00:00:21,824
+dirty, and do a calculation,
+
+8
+00:00:21,824 --> 00:00:24,285
+dividing dirty by two,
+
+9
+00:00:24,285 --> 00:00:27,004
+whose result will be returned.
+
+10
+00:00:27,004 --> 00:00:32,225
+For example, here, we are passing 30 in waterFilter,
+
+11
+00:00:32,225 --> 00:00:34,405
+and we get back 15.
+
+12
+00:00:34,405 --> 00:00:37,070
+Now, here is a data class,
+
+13
+00:00:37,070 --> 00:00:41,259
+fish, that has one property, its name.
+
+14
+00:00:41,259 --> 00:00:45,339
+We can then create a variable, myFish,
+
+15
+00:00:45,340 --> 00:00:52,710
+that is assigned to a list of fish with three fish each with a different name: Flipper,
+
+16
+00:00:52,710 --> 00:00:55,219
+Moby Dick, and Dory.
+
+17
+00:00:55,219 --> 00:01:00,479
+To print the names of all the fish whose name contains the letter I,
+
+18
+00:01:00,479 --> 00:01:01,918
+we do the following.
+
+19
+00:01:01,918 --> 00:01:04,659
+We start with our list of fish,
+
+20
+00:01:04,659 --> 00:01:08,519
+myFish, then we add a filter.
+
+21
+00:01:08,519 --> 00:01:13,864
+Inside the filter, we use it to refer to the current element of the list.
+
+22
+00:01:13,864 --> 00:01:18,515
+We get the name and check whether it contains the letter I.
+
+23
+00:01:18,515 --> 00:01:22,099
+This returns a list of all the names that contain the letter
+
+24
+00:01:22,099 --> 00:01:26,609
+I. Reapply joinToString to that returned list.
+
+25
+00:01:26,609 --> 00:01:30,379
+JoinToString creates a string from all the names of the elements in
+
+26
+00:01:30,379 --> 00:01:34,524
+the list separated using this applied separator,
+
+27
+00:01:34,525 --> 00:01:36,645
+which is a space in our case,
+
+28
+00:01:36,644 --> 00:01:39,039
+and returning that string.
+
+29
+00:01:39,040 --> 00:01:44,419
+JoinToString is another one of those handy standard library functions,
+
+30
+00:01:44,418 --> 00:01:47,129
+and there is a link in the notes.
+

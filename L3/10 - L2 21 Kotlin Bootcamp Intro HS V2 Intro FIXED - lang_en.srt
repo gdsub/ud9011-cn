@@ -1,0 +1,40 @@
+1
+00:00:00,000 --> 00:00:03,254
+Now, that we've flown through the very basics,
+
+2
+00:00:03,254 --> 00:00:08,625
+you are ready to write some Kotlin code that actually does something useful.
+
+3
+00:00:08,625 --> 00:00:12,644
+Our aquarium could really use some decorations.
+
+4
+00:00:12,644 --> 00:00:17,730
+More importantly, it needs an AMS,
+
+5
+00:00:17,730 --> 00:00:20,240
+an aquarium management system.
+
+6
+00:00:20,239 --> 00:00:24,429
+This AMS will feed the fish and change the water for you.
+
+7
+00:00:24,429 --> 00:00:29,309
+And of course, the AMS needs a Kotlin program to run properly.
+
+8
+00:00:29,309 --> 00:00:31,140
+So, in this lesson,
+
+9
+00:00:31,140 --> 00:00:34,259
+you're going to write parts of a Kotlin program with
+
+10
+00:00:34,259 --> 00:00:38,439
+functions and functionality to manage an aquarium.
+

@@ -1,0 +1,124 @@
+1
+00:00:00,000 --> 00:00:03,330
+You are more than halfway and in good shape to build
+
+2
+00:00:03,330 --> 00:00:07,265
+your very own aquarium with happy, healthy fish.
+
+3
+00:00:07,264 --> 00:00:10,160
+Don't forget, this course is, first and foremost,
+
+4
+00:00:10,160 --> 00:00:13,044
+about Kotlin, not aquarium care.
+
+5
+00:00:13,044 --> 00:00:15,750
+But there are so many more topics to cover,
+
+6
+00:00:15,750 --> 00:00:19,175
+and we don't have time to get deep into each of them.
+
+7
+00:00:19,175 --> 00:00:21,089
+Like you can create
+
+8
+00:00:21,089 --> 00:00:26,144
+a much better environment for your fish if you test the water quality regularly.
+
+9
+00:00:26,144 --> 00:00:30,664
+But what if your fish gets sick even if you do change the water?
+
+10
+00:00:30,664 --> 00:00:34,545
+How do you know what symptoms go with which disease,
+
+11
+00:00:34,545 --> 00:00:36,255
+and how do you treat it?
+
+12
+00:00:36,255 --> 00:00:38,984
+Does it matter what you feed your fish?
+
+13
+00:00:38,984 --> 00:00:42,774
+Can fish get vitamin deficiency or depression?
+
+14
+00:00:42,774 --> 00:00:45,399
+Do they have feelings?
+
+15
+00:00:45,399 --> 00:00:49,015
+Yes. Yes. That's a lot to learn,
+
+16
+00:00:49,015 --> 00:00:52,469
+and there's so much more Kotlin, too.
+
+17
+00:00:52,469 --> 00:00:56,319
+But this is a bootcamp about how to get you rolling with Kotlin,
+
+18
+00:00:56,319 --> 00:01:00,535
+so you are ready for other courses that use Kotlin to do cool things.
+
+19
+00:01:00,534 --> 00:01:02,504
+For example, with phones.
+
+20
+00:01:02,505 --> 00:01:05,590
+So, what we can do is give you starting points,
+
+21
+00:01:05,590 --> 00:01:08,484
+and that's what we're going to do in this lesson.
+
+22
+00:01:08,484 --> 00:01:10,090
+We're going to kick you off on
+
+23
+00:01:10,090 --> 00:01:14,890
+nine different topics and set you free to continue exploring on your own.
+
+24
+00:01:14,890 --> 00:01:19,569
+Among other things, we're going to cover pairs and more on collections,
+
+25
+00:01:19,569 --> 00:01:21,739
+show you how to do constants in Kotlin,
+
+26
+00:01:21,739 --> 00:01:24,234
+sneak a peek at annotations,
+
+27
+00:01:24,234 --> 00:01:26,144
+dive deep into generics,
+
+28
+00:01:26,144 --> 00:01:28,884
+and the most scary one, label breaks.
+
+29
+00:01:28,885 --> 00:01:33,130
+Generics is an advanced topic but super relevant for Kotlin,
+
+30
+00:01:33,129 --> 00:01:35,829
+and we'll walk you through it one step at a time.
+
+31
+00:01:35,829 --> 00:01:40,329
+And in the end, our fish will live in a perfect water supply.
+

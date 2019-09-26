@@ -1,0 +1,80 @@
+1
+00:00:00,000 --> 00:00:02,024
+Welcome to lesson five;
+
+2
+00:00:02,024 --> 00:00:04,140
+the final lesson of this course.
+
+3
+00:00:04,139 --> 00:00:08,219
+This lesson is all about fish because for most people,
+
+4
+00:00:08,220 --> 00:00:11,325
+the main attraction of an aquarium are its fish.
+
+5
+00:00:11,324 --> 00:00:15,449
+So, how about we try our hands at picking and breeding some fish?
+
+6
+00:00:15,449 --> 00:00:19,019
+So, we'll also do a little bit of Kotlin on the side.
+
+7
+00:00:19,019 --> 00:00:22,259
+We'll revisit Lambdas and go a little deeper because they
+
+8
+00:00:22,260 --> 00:00:25,830
+are one of the essential specialities of Kotlin.
+
+9
+00:00:25,829 --> 00:00:28,513
+This leads to higher order functions,
+
+10
+00:00:28,513 --> 00:00:32,490
+basically functions that take functions as arguments.
+
+11
+00:00:32,490 --> 00:00:35,325
+This makes Kotlin extremely flexible.
+
+12
+00:00:35,325 --> 00:00:39,450
+We'll talk about SAM or single abstract methods,
+
+13
+00:00:39,450 --> 00:00:40,950
+as well as inline.
+
+14
+00:00:40,950 --> 00:00:43,935
+I'm looking forward to finding out more about SAM.
+
+15
+00:00:43,935 --> 00:00:46,890
+If they have an aquarium, I'm all for it.
+
+16
+00:00:46,890 --> 00:00:49,289
+To close out, we'll play with filters;
+
+17
+00:00:49,289 --> 00:00:51,990
+the Kotlin type not the aquarium type.
+
+18
+00:00:51,990 --> 00:00:54,840
+We'll talk a little bit about the standard library,
+
+19
+00:00:54,840 --> 00:00:57,705
+and where you can go if you want to study more fish.
+
+20
+00:00:57,704 --> 00:00:58,799
+Kotlin.
+

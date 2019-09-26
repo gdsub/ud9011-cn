@@ -1,0 +1,404 @@
+1
+00:00:00,000 --> 00:00:05,519
+Welcome to the Kotlin Bootcamp for Programmers, where, surprise!
+
+2
+00:00:05,519 --> 00:00:07,979
+you will learn Kotlin.
+
+3
+00:00:07,980 --> 00:00:11,565
+Hey there. I'm Sean McQuillan and I'm a Kotlin expert at Google.
+
+4
+00:00:11,564 --> 00:00:15,829
+I love Kotlin because it let's me build great features with less code.
+
+5
+00:00:15,830 --> 00:00:17,714
+When I'm not working with Kotlin,
+
+6
+00:00:17,714 --> 00:00:20,495
+you can find me playing the piano and crocheting.
+
+7
+00:00:20,495 --> 00:00:22,600
+Alex, here, invited me to join him,
+
+8
+00:00:22,600 --> 00:00:25,240
+and I'm really excited to share Kotlin with you.
+
+9
+00:00:25,239 --> 00:00:26,869
+Hi, I'm Alex.
+
+10
+00:00:26,870 --> 00:00:29,890
+I'm a training and software developer at Google.
+
+11
+00:00:29,890 --> 00:00:33,100
+My main job is to learn stuff,
+
+12
+00:00:33,100 --> 00:00:34,810
+and then explain it to people.
+
+13
+00:00:34,810 --> 00:00:38,039
+This year, I'm learning to become a Kotlin expert.
+
+14
+00:00:38,039 --> 00:00:42,780
+Just like you I had many questions while writing this course and by
+
+15
+00:00:42,780 --> 00:00:47,670
+answering them in these lessons with lots of expertise from Sean,
+
+16
+00:00:47,670 --> 00:00:51,260
+we hope you have a smooth journey and some fun along the way.
+
+17
+00:00:51,259 --> 00:00:52,829
+Did you have a fun fact?
+
+18
+00:00:52,829 --> 00:00:56,500
+We'll get to that. Why don't you look around the room?
+
+19
+00:00:56,729 --> 00:01:01,049
+Before we start, let's make sure you are in the right place.
+
+20
+00:01:01,049 --> 00:01:05,204
+This course is for students who know a modern object-oriented,
+
+21
+00:01:05,204 --> 00:01:07,864
+statically typed programming language.
+
+22
+00:01:07,864 --> 00:01:11,219
+It's best if you have been programming for some time,
+
+23
+00:01:11,219 --> 00:01:13,950
+and are comfortable with an IDE,
+
+24
+00:01:13,950 --> 00:01:17,370
+such as IntelliJ or Android Studio.
+
+25
+00:01:17,370 --> 00:01:22,630
+Coming in, you should know the basics of programming in an object-oriented language.
+
+26
+00:01:22,629 --> 00:01:25,015
+You should be familiar with classes, methods,
+
+27
+00:01:25,015 --> 00:01:27,644
+and exception handling in at least one language.
+
+28
+00:01:27,644 --> 00:01:30,134
+You don't need to be a Java expert.
+
+29
+00:01:30,135 --> 00:01:34,265
+Familiarity in any modern object-oriented language is great.
+
+30
+00:01:34,265 --> 00:01:37,769
+If you do know what functional programming and lambdas are,
+
+31
+00:01:37,769 --> 00:01:39,929
+that's definitely a bonus.
+
+32
+00:01:39,930 --> 00:01:44,790
+Basically, we want to provide a course that let's an experienced developer learn
+
+33
+00:01:44,790 --> 00:01:50,000
+Kotlin without having to read another book about the concepts of structured programming.
+
+34
+00:01:50,000 --> 00:01:53,090
+Kotlin is an expressive programming language with
+
+35
+00:01:53,090 --> 00:01:56,945
+a strong type system, featuring type inference.
+
+36
+00:01:56,944 --> 00:01:59,974
+It has lambdas, co-routines, properties,
+
+37
+00:01:59,974 --> 00:02:04,594
+and many other features that let you write less code with fewer bugs.
+
+38
+00:02:04,594 --> 00:02:07,174
+It's really started to take off recently,
+
+39
+00:02:07,174 --> 00:02:12,530
+but it's actually been around since 2011, open-sourced in 2012.
+
+40
+00:02:12,530 --> 00:02:17,409
+Developed by JetBrains, it reached version 1.0 in 2016.
+
+41
+00:02:17,409 --> 00:02:23,409
+Since 2017, Kotlin is also an officially supported language for building Android apps,
+
+42
+00:02:23,409 --> 00:02:25,560
+and it's included with IntelliJ,
+
+43
+00:02:25,560 --> 00:02:28,430
+and also with Android Studio 3.0,
+
+44
+00:02:28,430 --> 00:02:31,300
+and later, out of the box.
+
+45
+00:02:34,810 --> 00:02:37,914
+I'd been asked all week what is it I liked by Kotlin,
+
+46
+00:02:37,914 --> 00:02:40,969
+and I basically have to stop and say, "How much time do you have?"
+
+47
+00:02:40,969 --> 00:02:43,199
+Because I could go on for an hour,
+
+48
+00:02:43,199 --> 00:02:46,644
+and I have with some people on the team just to convince them to switch to Kotlin.
+
+49
+00:02:46,645 --> 00:02:48,460
+A lot of us started writing code in Kotlin,
+
+50
+00:02:48,460 --> 00:02:50,849
+and found it was just a beautiful programming language.
+
+51
+00:02:50,849 --> 00:02:52,960
+It's so concise and so expressive.
+
+52
+00:02:52,960 --> 00:02:55,090
+It's very hard to take a favor to
+
+53
+00:02:55,090 --> 00:02:58,145
+Fischer because there are so many of them, and I love them all.
+
+54
+00:02:58,145 --> 00:03:00,630
+There is a lot of excitement about Kotlin,
+
+55
+00:03:00,629 --> 00:03:02,819
+and here are some big reasons why.
+
+56
+00:03:02,819 --> 00:03:05,879
+Let's talk about null pointer exceptions.
+
+57
+00:03:05,879 --> 00:03:08,969
+We know null pointer exceptions are bad because
+
+58
+00:03:08,969 --> 00:03:12,314
+they have been responsible for a huge financial losses,
+
+59
+00:03:12,314 --> 00:03:18,329
+spectacular computer crashes and uncountable hours of debugging madness.
+
+60
+00:03:18,330 --> 00:03:22,080
+To make our life a lot more enjoyable and safer,
+
+61
+00:03:22,080 --> 00:03:26,235
+Kotlin distinguishes between nullable and none non-nullible data types,
+
+62
+00:03:26,235 --> 00:03:29,470
+and this eliminates many errors at compile time.
+
+63
+00:03:29,469 --> 00:03:30,780
+Cool? All right.
+
+64
+00:03:30,780 --> 00:03:31,640
+Cool.
+
+65
+00:03:31,639 --> 00:03:33,969
+But there is more.
+
+66
+00:03:33,969 --> 00:03:37,379
+Kotlin code is very, very concise.
+
+67
+00:03:37,379 --> 00:03:41,669
+For example, boilerplate code is code that we have to type,
+
+68
+00:03:41,669 --> 00:03:45,004
+and that doesn't actually affect the way our app works.
+
+69
+00:03:45,004 --> 00:03:49,500
+Helpfully, Kotlin takes care of the boilerplate code for us.
+
+70
+00:03:49,500 --> 00:03:53,400
+Kotlin does remove a lot of boilerplate from code.
+
+71
+00:03:53,400 --> 00:03:55,800
+Kotlin was also designed for readability,
+
+72
+00:03:55,800 --> 00:03:59,865
+and that means code always stands on its own without any hidden side effects.
+
+73
+00:03:59,865 --> 00:04:04,844
+Removing boilerplate and improving readability are sometimes at odds with each other.
+
+74
+00:04:04,844 --> 00:04:08,895
+And when the Kotlin designers were faced with decisions like this,
+
+75
+00:04:08,895 --> 00:04:11,175
+they always chose readability.
+
+76
+00:04:11,175 --> 00:04:14,430
+I like to call this just enough boilerplate.
+
+77
+00:04:14,430 --> 00:04:18,280
+Kotlin has both object and functional constructs.
+
+78
+00:04:18,279 --> 00:04:23,404
+Speaking of classes, how many trivial getters and setters have you written?
+
+79
+00:04:23,404 --> 00:04:27,459
+Well, never more. In Kotlin,
+
+80
+00:04:27,459 --> 00:04:31,334
+the compiler does it for you and without errors.
+
+81
+00:04:31,334 --> 00:04:35,729
+Kotlin compiles so that you can use Java in Kotlin side-by-side,
+
+82
+00:04:35,730 --> 00:04:39,420
+which means you can continue to use your favorite Java libraries.
+
+83
+00:04:39,420 --> 00:04:42,600
+It also means that you can start using Kotlin in
+
+84
+00:04:42,600 --> 00:04:46,340
+an existing Java project without having to migrate everything,
+
+85
+00:04:46,339 --> 00:04:48,079
+and that's a big win.
+
+86
+00:04:48,079 --> 00:04:49,954
+But if you do choose to migrate,
+
+87
+00:04:49,954 --> 00:04:54,079
+Android Studio and IntelliJ provide a handy converter.
+
+88
+00:04:54,079 --> 00:04:59,949
+Now, if you don't know how to program using the Java programming language, don't worry.
+
+89
+00:04:59,949 --> 00:05:02,495
+You don't need it to start learning Kotlin.
+
+90
+00:05:02,495 --> 00:05:06,800
+This course is designed for programmers from any language background.
+
+91
+00:05:06,800 --> 00:05:10,434
+In this course, we are using IntelliJ from JetBrains,
+
+92
+00:05:10,434 --> 00:05:11,675
+the makers of Kotlin.
+
+93
+00:05:11,675 --> 00:05:15,780
+Everything you need to work with Kotlin is included with the IDE.
+
+94
+00:05:15,779 --> 00:05:17,250
+To add some color,
+
+95
+00:05:17,250 --> 00:05:20,235
+instead of building a usual weather,
+
+96
+00:05:20,235 --> 00:05:23,160
+shopping list, or chat app,
+
+97
+00:05:23,160 --> 00:05:25,640
+we are going to build an aquarium.
+
+98
+00:05:25,639 --> 00:05:26,769
+in Kotlin.
+
+99
+00:05:26,769 --> 00:05:27,839
+Of course.
+
+100
+00:05:27,839 --> 00:05:31,889
+Go ahead and install the IDE following the steps in the next text node.
+
+101
+00:05:31,889 --> 00:05:35,459
+We'll see you back when you're ready to write some code.
+

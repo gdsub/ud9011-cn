@@ -1,0 +1,60 @@
+1
+00:00:00,000 --> 00:00:03,254
+Kotlin has several ways of controlling flow.
+
+2
+00:00:03,254 --> 00:00:06,509
+You are already familiar with return which
+
+3
+00:00:06,509 --> 00:00:10,019
+returns from a function to its enclosing function.
+
+4
+00:00:10,019 --> 00:00:13,994
+Break is like return but for loops.
+
+5
+00:00:13,994 --> 00:00:20,460
+Kotlin gives you additional control over loops with what's called a labeled break.
+
+6
+00:00:20,460 --> 00:00:24,390
+A break qualified with a label jumps to
+
+7
+00:00:24,390 --> 00:00:29,460
+the execution point right after the loop marked with that label.
+
+8
+00:00:29,460 --> 00:00:35,380
+What happens since this function is that if I is greater than 10,
+
+9
+00:00:35,380 --> 00:00:41,515
+we break and resume execution at the label.
+
+10
+00:00:41,515 --> 00:00:46,284
+What this does is give you better control over nested loops.
+
+11
+00:00:46,284 --> 00:00:50,589
+Any expression in Kotlin may be marked with a label.
+
+12
+00:00:50,590 --> 00:00:56,350
+Labels have the form of an identifier followed by the add sign.
+
+13
+00:00:56,350 --> 00:00:59,770
+Check the grammar for more information on this.
+
+14
+00:00:59,770 --> 00:01:01,945
+To label an expression,
+
+15
+00:01:01,945 --> 00:01:05,000
+we just put a label in front of it.
+

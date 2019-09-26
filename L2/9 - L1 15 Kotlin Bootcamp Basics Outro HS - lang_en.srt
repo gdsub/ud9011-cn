@@ -1,0 +1,16 @@
+1
+00:00:00,000 --> 00:00:03,330
+And there you have it, the very basics of Kotlin,
+
+2
+00:00:03,330 --> 00:00:07,035
+enough that you can experiment in the interpreter and write some code.
+
+3
+00:00:07,035 --> 00:00:08,655
+In the next lesson,
+
+4
+00:00:08,654 --> 00:00:11,919
+we are going to talk a lot more about functions.
+

@@ -1,0 +1,8 @@
+1
+00:00:00,000 --> 00:00:01,800
+That was a lot.
+
+2
+00:00:01,800 --> 00:00:07,370
+I think it's time to add the final touches to our aquarium before we meet SAM.
+

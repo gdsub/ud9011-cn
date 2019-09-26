@@ -1,0 +1,12 @@
+1
+00:00:00,000 --> 00:00:03,305
+And these are the tools you need to work with Kotlin.
+
+2
+00:00:03,305 --> 00:00:04,780
+In the next lesson,
+
+3
+00:00:04,780 --> 00:00:09,400
+you will use the Kotlin Interpreter to learn about basic language features.
+

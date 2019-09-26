@@ -1,0 +1,360 @@
+1
+00:00:00,000 --> 00:00:02,774
+How many times have you written util functions that add
+
+2
+00:00:02,774 --> 00:00:06,554
+helpful behavior to a class? Probably a lot.
+
+3
+00:00:06,554 --> 00:00:10,984
+Kotlin provides a convenient syntax for declaring these util functions.
+
+4
+00:00:10,984 --> 00:00:12,679
+Extension functions.
+
+5
+00:00:12,679 --> 00:00:15,660
+Extension functions allow you to add functions to
+
+6
+00:00:15,660 --> 00:00:19,230
+an existing class without having access to its source code.
+
+7
+00:00:19,230 --> 00:00:24,940
+For example, you could declare them in extensions.kt as part of your package.
+
+8
+00:00:24,940 --> 00:00:30,090
+Under the hood, extensions do not actually modify the classes they extend.
+
+9
+00:00:30,089 --> 00:00:32,084
+By defining an extension,
+
+10
+00:00:32,084 --> 00:00:34,935
+you do not insert new members into the class,
+
+11
+00:00:34,935 --> 00:00:40,525
+we merely make a new function callable with the dot-notation on variables of this type.
+
+12
+00:00:40,524 --> 00:00:43,094
+An extension function looks like this.
+
+13
+00:00:43,094 --> 00:00:46,174
+You specify the classes extended before the dot,
+
+14
+00:00:46,174 --> 00:00:48,029
+then put the function name.
+
+15
+00:00:48,030 --> 00:00:50,054
+Inside the extension function,
+
+16
+00:00:50,054 --> 00:00:53,570
+this is bound to the instance it's called on.
+
+17
+00:00:53,570 --> 00:00:56,100
+Once you defined an extension function,
+
+18
+00:00:56,100 --> 00:00:59,640
+it's available as if it were declared on the class.
+
+19
+00:00:59,640 --> 00:01:01,590
+And that's pretty cool.
+
+20
+00:01:01,590 --> 00:01:05,909
+Of course, we can make hasSpaces way shorter in Kotlin.
+
+21
+00:01:05,909 --> 00:01:08,319
+We don't need to explicitly say this,
+
+22
+00:01:08,319 --> 00:01:10,024
+just like in member functions.
+
+23
+00:01:10,025 --> 00:01:13,190
+The call will find and implicitly use this.
+
+24
+00:01:13,189 --> 00:01:16,069
+We also don't need to use braces around the body
+
+25
+00:01:16,069 --> 00:01:19,189
+since this can be represented as one expression.
+
+26
+00:01:19,189 --> 00:01:22,099
+Extension functions are a great way to add
+
+27
+00:01:22,099 --> 00:01:25,204
+helpful functionality to classes you don't own.
+
+28
+00:01:25,204 --> 00:01:31,189
+You can also use it to separate the core API from helper methods on classes you do own.
+
+29
+00:01:31,189 --> 00:01:35,185
+If we have an AquariumPlant class with a color and a size,
+
+30
+00:01:35,185 --> 00:01:38,605
+we can define extension functions for helpers.
+
+31
+00:01:38,605 --> 00:01:42,335
+For example, this red is a useful function
+
+32
+00:01:42,334 --> 00:01:46,069
+but it's not really part of the core API of AquariumPlant.
+
+33
+00:01:46,069 --> 00:01:48,708
+By defining it as an extension function,
+
+34
+00:01:48,709 --> 00:01:51,380
+we clearly show that it's just a helper.
+
+35
+00:01:51,379 --> 00:01:57,004
+Note though, extension functions are defined outside of the class they extend.
+
+36
+00:01:57,004 --> 00:02:00,739
+So, they don't get access to private variables.
+
+37
+00:02:00,739 --> 00:02:05,435
+If we try to define an isBig function on AquariumPlant,
+
+38
+00:02:05,435 --> 00:02:08,349
+we'll get an error saying "Size is private."
+
+39
+00:02:08,349 --> 00:02:13,389
+You should think of them as helper functions that rely only on the public API.
+
+40
+00:02:13,389 --> 00:02:15,909
+Extension functions are always resolved
+
+41
+00:02:15,909 --> 00:02:19,025
+statically based on the variable they're applied to.
+
+42
+00:02:19,025 --> 00:02:23,530
+Let's make a GreenLeafyPlant class that extends AquariumPlant,
+
+43
+00:02:23,530 --> 00:02:29,039
+then declare two extension functions as free functions outside of the class.
+
+44
+00:02:29,039 --> 00:02:31,519
+We extend AquariumPlant to print
+
+45
+00:02:31,520 --> 00:02:36,225
+"AquariumPlant" and GreenLeafyPlant to print "GreenLeafyPlant."
+
+46
+00:02:36,224 --> 00:02:38,310
+In an example function,
+
+47
+00:02:38,310 --> 00:02:42,444
+let's make of our plant variable of GreenLeafyPlant.
+
+48
+00:02:42,444 --> 00:02:46,484
+And now when we print the plant, it prints "GreenLeafyPlant."
+
+49
+00:02:46,485 --> 00:02:48,085
+In the same function,
+
+50
+00:02:48,085 --> 00:02:49,745
+let's create another variable,
+
+51
+00:02:49,745 --> 00:02:52,469
+AquariumPlant of type AquariumPlant,
+
+52
+00:02:52,469 --> 00:02:54,925
+and use the plant we just created.
+
+53
+00:02:54,925 --> 00:03:00,790
+We might expect that printing AquariumPlant would print "GreenLeafyPlant." Let's try it.
+
+54
+00:03:00,789 --> 00:03:06,745
+It turns out when we call prints on AquariumPlant, it prints "AquariumPlant."
+
+55
+00:03:06,745 --> 00:03:11,155
+This is because the extension function is resolved statically.
+
+56
+00:03:11,155 --> 00:03:13,349
+That is at compile time.
+
+57
+00:03:13,349 --> 00:03:17,139
+And the compiler, it just looks at the type of the variable.
+
+58
+00:03:17,139 --> 00:03:18,774
+So at compile time,
+
+59
+00:03:18,775 --> 00:03:21,284
+AquariumPlant is an AquariumPlant,
+
+60
+00:03:21,284 --> 00:03:24,139
+and so it will print "AquariumPlant."
+
+61
+00:03:24,139 --> 00:03:27,259
+You can define extension properties too.
+
+62
+00:03:27,259 --> 00:03:29,310
+Just like extension functions,
+
+63
+00:03:29,310 --> 00:03:31,599
+you specify the class you're extending,
+
+64
+00:03:31,599 --> 00:03:33,139
+followed by the dot,
+
+65
+00:03:33,139 --> 00:03:35,089
+followed by the property name.
+
+66
+00:03:35,090 --> 00:03:39,950
+Here, we're extending AquariumPlant declaring "isGreen."
+
+67
+00:03:39,949 --> 00:03:41,419
+We define a getter,
+
+68
+00:03:41,419 --> 00:03:44,149
+where we're checking whether the color is green.
+
+69
+00:03:44,150 --> 00:03:48,020
+We can use isGreen just like a regular property.
+
+70
+00:03:48,020 --> 00:03:49,760
+In this example function,
+
+71
+00:03:49,759 --> 00:03:52,995
+we make a plant and then tests whether it's green.
+
+72
+00:03:52,995 --> 00:03:56,694
+This calls the getter of isGreen and returns true.
+
+73
+00:03:56,694 --> 00:03:59,409
+You can also make the class you're extending,
+
+74
+00:03:59,409 --> 00:04:02,620
+which is sometimes called the receiver nullable.
+
+75
+00:04:02,620 --> 00:04:04,930
+If you do that, then the "this?"
+
+76
+00:04:04,930 --> 00:04:07,780
+variable used in the body can be null.
+
+77
+00:04:07,780 --> 00:04:09,699
+Make sure you test for that.
+
+78
+00:04:09,699 --> 00:04:13,689
+Let's define a pull method that takes some nullable receiver.
+
+79
+00:04:13,689 --> 00:04:18,939
+That is the object on which the extension function is called can be null.
+
+80
+00:04:18,939 --> 00:04:22,535
+We indicate this with a question mark after AquariumPlant,
+
+81
+00:04:22,535 --> 00:04:24,205
+but before the dot.
+
+82
+00:04:24,204 --> 00:04:29,379
+Inside the body, we can test for null by using?.apply.
+
+83
+00:04:29,379 --> 00:04:33,189
+You would want to take a nullable receiver if you expect
+
+84
+00:04:33,189 --> 00:04:37,620
+the callers will want to call your extension function on nullable variables,
+
+85
+00:04:37,620 --> 00:04:43,215
+or if you want to provide a default behavior when your function is applied to know.
+
+86
+00:04:43,214 --> 00:04:46,000
+Extension functions are really powerful,
+
+87
+00:04:46,000 --> 00:04:50,954
+and most of the Kotlin standard library is implemented as extension function.
+
+88
+00:04:50,954 --> 00:04:52,694
+Once you've got the hang of them,
+
+89
+00:04:52,694 --> 00:04:55,360
+you'll find yourself defining them every time you want to
+
+90
+00:04:55,360 --> 00:04:58,270
+add some extra functionality to a class.
+

@@ -1,0 +1,68 @@
+1
+00:00:00,000 --> 00:00:02,685
+Welcome back. In this lesson,
+
+2
+00:00:02,685 --> 00:00:05,325
+you're going to use the Kotlin interpreter
+
+3
+00:00:05,325 --> 00:00:08,234
+to get comfortable with the basic language features.
+
+4
+00:00:08,234 --> 00:00:10,919
+It is best if you just follow along with us,
+
+5
+00:00:10,919 --> 00:00:13,830
+as we type out and explain the examples.
+
+6
+00:00:13,830 --> 00:00:16,149
+To make this a bit more entertaining,
+
+7
+00:00:16,149 --> 00:00:18,269
+we will go at a good pace,
+
+8
+00:00:18,269 --> 00:00:21,899
+and we're going to wrap all of this into an aquarium.
+
+9
+00:00:21,899 --> 00:00:25,149
+Now, I've had aquarium since my aunt gave me one.
+
+10
+00:00:25,149 --> 00:00:27,744
+Plants and all when I was about nine.
+
+11
+00:00:27,745 --> 00:00:30,144
+There's everything in an aquarium,
+
+12
+00:00:30,144 --> 00:00:31,600
+to teach your Kotlin.
+
+13
+00:00:31,600 --> 00:00:37,725
+Now, we couldn't really set up a big fancy aquarium here at the studio.
+
+14
+00:00:37,725 --> 00:00:40,329
+But, we hope you enjoy our small project.
+
+15
+00:00:40,329 --> 00:00:43,585
+I'm not really sure how Kotlin is like an aquarium,
+
+16
+00:00:43,585 --> 00:00:46,929
+but I bet we'll all find out by the end of this course.
+
+17
+00:00:46,929 --> 00:00:49,560
+Let's get started with the basics.
+

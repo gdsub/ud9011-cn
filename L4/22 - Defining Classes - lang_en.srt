@@ -1,0 +1,572 @@
+1
+00:00:00,000 --> 00:00:03,870
+Hello. Let's define a class for our Aquarium.
+
+2
+00:00:03,870 --> 00:00:07,245
+For that, let's create a new package.
+
+3
+00:00:07,245 --> 00:00:09,105
+This is not required,
+
+4
+00:00:09,105 --> 00:00:13,964
+but it's always a good idea to keep our classes organized in packages.
+
+5
+00:00:13,964 --> 00:00:16,050
+On the source folder,
+
+6
+00:00:16,050 --> 00:00:21,524
+right-click and select ''New package'' and call it "Aquarium."
+
+7
+00:00:21,524 --> 00:00:26,719
+And then, create a new Kotlin File in the Aquarium package.
+
+8
+00:00:26,719 --> 00:00:32,214
+Right-click on ''Source'', select new Kotlin File/Class,
+
+9
+00:00:32,215 --> 00:00:35,570
+and also call it ''Aquarium. ''
+
+10
+00:00:35,570 --> 00:00:39,284
+Inside the file, we can define a class Aquarium
+
+11
+00:00:39,284 --> 00:00:44,679
+using the class keyword and the name of the class.
+
+12
+00:00:44,679 --> 00:00:48,795
+Class names by convention start with a capital letter.
+
+13
+00:00:48,795 --> 00:00:54,179
+This is a valid class in Kotlin and you don't see any errors in IntelliJ,
+
+14
+00:00:54,179 --> 00:00:56,744
+but it doesn't have or do anything.
+
+15
+00:00:56,744 --> 00:01:01,544
+Let's add curly braces so we can define something inside the class.
+
+16
+00:01:01,545 --> 00:01:06,299
+Let's define some properties or characteristics for the aquarium class.
+
+17
+00:01:06,299 --> 00:01:10,825
+Here are properties for the length, width, and height.
+
+18
+00:01:10,825 --> 00:01:12,995
+We're setting them in the class,
+
+19
+00:01:12,995 --> 00:01:15,600
+and currently they're val,
+
+20
+00:01:15,599 --> 00:01:17,289
+which makes them immutable.
+
+21
+00:01:17,290 --> 00:01:21,594
+Immutable means that they can't be modified after they're created.
+
+22
+00:01:21,594 --> 00:01:25,069
+So, all Aquariums we create will have the same size.
+
+23
+00:01:25,069 --> 00:01:29,154
+That' s not very interesting and we're going to fix it in a moment.
+
+24
+00:01:29,155 --> 00:01:32,155
+But first, let's create an instance.
+
+25
+00:01:32,155 --> 00:01:34,230
+We need a place to do that.
+
+26
+00:01:34,230 --> 00:01:35,615
+So let's create a file for
+
+27
+00:01:35,614 --> 00:01:39,619
+our main function and the other functions that are not methods.
+
+28
+00:01:39,620 --> 00:01:46,320
+Right-click on ''Aquarium'' and select ''new Kotlin File/Class,'' and call it ''Main.''
+
+29
+00:01:46,319 --> 00:01:48,309
+Inside the same file,
+
+30
+00:01:48,310 --> 00:01:52,530
+we create another main function, there it is.
+
+31
+00:01:52,530 --> 00:01:55,150
+We can have more than one main function,
+
+32
+00:01:55,150 --> 00:01:59,585
+and you can choose the one you're on by right-clicking on it and choosing ''Run.''
+
+33
+00:01:59,584 --> 00:02:01,364
+And from inside main,
+
+34
+00:02:01,364 --> 00:02:03,924
+we call a function ''buildAquarium'',
+
+35
+00:02:03,924 --> 00:02:07,435
+which gives an error until we implement the function.
+
+36
+00:02:07,435 --> 00:02:10,164
+So, we defined buildAquarium,
+
+37
+00:02:10,164 --> 00:02:12,864
+and now we don't have any more errors.
+
+38
+00:02:12,865 --> 00:02:15,969
+In buildAquarium, we create an Aquarium.
+
+39
+00:02:15,969 --> 00:02:20,949
+We do this by calling Aquarium as if it was a function.
+
+40
+00:02:20,949 --> 00:02:25,685
+This does the same thing that the new keyword does in other languages.
+
+41
+00:02:25,685 --> 00:02:30,840
+It creates a new instance of Aquarium by calling its constructor.
+
+42
+00:02:30,840 --> 00:02:32,710
+As the name implies,
+
+43
+00:02:32,710 --> 00:02:36,520
+constructors construct object instances from class descriptions.
+
+44
+00:02:36,520 --> 00:02:39,480
+We'll do more with constructors later.
+
+45
+00:02:39,479 --> 00:02:42,489
+Now, also in buildAquarium,
+
+46
+00:02:42,490 --> 00:02:46,975
+let's print out the values of the length, width, and height.
+
+47
+00:02:46,974 --> 00:02:50,594
+Notice that you can access the properties directly,
+
+48
+00:02:50,594 --> 00:02:57,120
+myAquarium.length, myAquarium.width and myAquarium.height.
+
+49
+00:02:57,120 --> 00:03:01,610
+Another hood, Kotlin actually made a getter for all three properties,
+
+50
+00:03:01,610 --> 00:03:03,860
+even though we didn't write any code.
+
+51
+00:03:03,860 --> 00:03:06,250
+When we access properties directly,
+
+52
+00:03:06,250 --> 00:03:09,169
+Kotlin always calls the corresponding getter,
+
+53
+00:03:09,169 --> 00:03:12,589
+even though it looks like they're accessing just the property.
+
+54
+00:03:12,590 --> 00:03:14,390
+When we run a program,
+
+55
+00:03:14,389 --> 00:03:17,309
+it prints the dimensions as expected.
+
+56
+00:03:17,310 --> 00:03:21,680
+Now to be able to change the values of the dimensions,
+
+57
+00:03:21,680 --> 00:03:25,730
+firstly, we make the dimensions changeable by using var,
+
+58
+00:03:25,729 --> 00:03:28,875
+instead of val in the aquarium class.
+
+59
+00:03:28,875 --> 00:03:33,129
+The difference between val and var is that variables
+
+60
+00:03:33,129 --> 00:03:37,930
+declared as val cannot be changed once they have been assigned a value,
+
+61
+00:03:37,930 --> 00:03:42,235
+and variables declared with var can be changed.
+
+62
+00:03:42,235 --> 00:03:48,190
+IntelliJ is really helpful here by underlining vars for us in the code.
+
+63
+00:03:48,189 --> 00:03:55,984
+Now in buildAquarium, we can make our Aquarium much taller and print out the new value.
+
+64
+00:03:55,985 --> 00:03:58,630
+Two things to notice here,
+
+65
+00:03:58,629 --> 00:04:02,064
+we don't have to change my Aquarium to a var,
+
+66
+00:04:02,064 --> 00:04:04,524
+because we're not changing the Aquarium,
+
+67
+00:04:04,524 --> 00:04:08,530
+it's the same object we are modifying its properties.
+
+68
+00:04:08,530 --> 00:04:10,439
+When talking about Aquariums,
+
+69
+00:04:10,439 --> 00:04:13,900
+usually, we talk about the amount of water that goes in.
+
+70
+00:04:13,900 --> 00:04:18,730
+So, our first inclination might be to create a method in the Aquarium class
+
+71
+00:04:18,730 --> 00:04:24,350
+that calculates and returns the volume of our fish tank in leaders, like so.
+
+72
+00:04:24,350 --> 00:04:27,250
+To take better advantage of Kotlin,
+
+73
+00:04:27,250 --> 00:04:30,579
+we can write this function which has only one line in
+
+74
+00:04:30,579 --> 00:04:35,370
+its body as a one-liner declaration, like so.
+
+75
+00:04:35,370 --> 00:04:37,199
+When we look at this,
+
+76
+00:04:37,199 --> 00:04:40,104
+really, we are just getting a value.
+
+77
+00:04:40,105 --> 00:04:42,819
+The fact that it's a function that
+
+78
+00:04:42,819 --> 00:04:46,865
+does calculation is not important to the person getting the value.
+
+79
+00:04:46,865 --> 00:04:50,935
+So, this is better represented as a property.
+
+80
+00:04:50,935 --> 00:04:55,165
+This property has a default getter that returns its value.
+
+81
+00:04:55,165 --> 00:04:57,700
+Since we want to calculate the value,
+
+82
+00:04:57,699 --> 00:05:00,884
+we can override the default getter to calculate the value.
+
+83
+00:05:00,884 --> 00:05:03,235
+The syntax is like this,
+
+84
+00:05:03,235 --> 00:05:06,009
+we declared a property and its type,
+
+85
+00:05:06,009 --> 00:05:09,219
+and then customarily on a new line,
+
+86
+00:05:09,220 --> 00:05:11,200
+we define the get function.
+
+87
+00:05:11,199 --> 00:05:14,384
+And we can write this in one line too.
+
+88
+00:05:14,384 --> 00:05:17,324
+Let's print the volume in buildAquarium.
+
+89
+00:05:17,324 --> 00:05:19,884
+We access this as a property,
+
+90
+00:05:19,884 --> 00:05:21,974
+but it is an expression,
+
+91
+00:05:21,975 --> 00:05:23,875
+so it needs curly braces.
+
+92
+00:05:23,875 --> 00:05:25,660
+Because under the hood,
+
+93
+00:05:25,660 --> 00:05:27,550
+this calls the get function.
+
+94
+00:05:27,550 --> 00:05:30,090
+Setters work in the same way.
+
+95
+00:05:30,089 --> 00:05:32,609
+Currently, volume is a val,
+
+96
+00:05:32,610 --> 00:05:34,500
+so it can't be set again.
+
+97
+00:05:34,500 --> 00:05:37,310
+Let's change this and make it a var,
+
+98
+00:05:37,310 --> 00:05:40,175
+and add a setter below the getter.
+
+99
+00:05:40,175 --> 00:05:44,460
+By convention, the name of the setter parameter is value,
+
+100
+00:05:44,459 --> 00:05:48,009
+but you can choose a different name if you prefer.
+
+101
+00:05:48,009 --> 00:05:50,694
+When we're given a new volume,
+
+102
+00:05:50,694 --> 00:05:54,529
+at least one of the dimensions of the Aquarium has to change.
+
+103
+00:05:54,529 --> 00:05:56,429
+Let's just change the height.
+
+104
+00:05:56,430 --> 00:05:58,780
+So, in our setter,
+
+105
+00:05:58,779 --> 00:06:02,639
+let's add code that takes the new value in litters,
+
+106
+00:06:02,639 --> 00:06:05,269
+and turns it into cubic centimeters,
+
+107
+00:06:05,269 --> 00:06:07,435
+and calculates the new height.
+
+108
+00:06:07,435 --> 00:06:12,129
+If you didn't want anyone outside the class to be able to use the setter,
+
+109
+00:06:12,129 --> 00:06:14,365
+you could make it private.
+
+110
+00:06:14,365 --> 00:06:17,650
+But we're going to leave it public for now.
+
+111
+00:06:17,649 --> 00:06:22,884
+Sean's now going to talk more about private and other visibility modifiers.
+
+112
+00:06:22,884 --> 00:06:28,435
+Did you notice that there are no visibility declarations in this program so far?
+
+113
+00:06:28,435 --> 00:06:32,560
+In Kotlin, everything is public by default.
+
+114
+00:06:32,560 --> 00:06:37,030
+That means all of your variables and clauses can be accessed everywhere,
+
+115
+00:06:37,029 --> 00:06:39,144
+even the member variables of an object.
+
+116
+00:06:39,144 --> 00:06:42,310
+There are visibility modifiers in Kotlin,
+
+117
+00:06:42,310 --> 00:06:46,845
+and you can use them to limit the size of the API that you expose.
+
+118
+00:06:46,845 --> 00:06:48,790
+At the package level,
+
+119
+00:06:48,790 --> 00:06:51,970
+if you do not specify any visibility modifier,
+
+120
+00:06:51,970 --> 00:06:54,160
+public is used by default.
+
+121
+00:06:54,160 --> 00:06:57,540
+Which means that your declarations will be visible everywhere.
+
+122
+00:06:57,540 --> 00:07:01,950
+The Main function and the buildAquarium function, are currently public.
+
+123
+00:07:01,949 --> 00:07:04,539
+If you mark a declaration private,
+
+124
+00:07:04,540 --> 00:07:08,754
+it will only be visible inside the file containing the declaration.
+
+125
+00:07:08,754 --> 00:07:12,459
+Since we're only going to use buildAquarium inside this file,
+
+126
+00:07:12,459 --> 00:07:13,944
+we can make it private.
+
+127
+00:07:13,944 --> 00:07:16,474
+If you mark buildAquarium internal,
+
+128
+00:07:16,475 --> 00:07:19,480
+it is visible anywhere in the same module.
+
+129
+00:07:19,480 --> 00:07:23,785
+A module is a set of Kotlin files compiled together.
+
+130
+00:07:23,785 --> 00:07:27,860
+When it's internal, we can use it from anywhere inside our project.
+
+131
+00:07:27,860 --> 00:07:30,030
+But, if we compile the library,
+
+132
+00:07:30,029 --> 00:07:32,559
+it wouldn't be exported as a function.
+
+133
+00:07:32,560 --> 00:07:35,334
+For members declared inside the class,
+
+134
+00:07:35,334 --> 00:07:38,349
+again by default, they are public.
+
+135
+00:07:38,350 --> 00:07:43,900
+Public means that any client who sees the class can also see it's public members.
+
+136
+00:07:43,899 --> 00:07:48,984
+Private means members are only visible inside the class.
+
+137
+00:07:48,985 --> 00:07:53,750
+Importantly, subclasses cannot see private members.
+
+138
+00:07:53,750 --> 00:07:56,649
+And protected means the same as private,
+
+139
+00:07:56,649 --> 00:08:00,310
+but members are also visible to subclasses.
+
+140
+00:08:00,310 --> 00:08:04,899
+And of course class members can have a visibility of internal as well.
+
+141
+00:08:04,899 --> 00:08:08,750
+It works just like internal at the file level.
+
+142
+00:08:08,750 --> 00:08:11,305
+That was a lot to take in.
+
+143
+00:08:11,305 --> 00:08:15,930
+You can learn more about visibility in the documentation linked in the notes.
+

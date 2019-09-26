@@ -1,0 +1,352 @@
+1
+00:00:00,000 --> 00:00:02,924
+To follow along from a clean slate,
+
+2
+00:00:02,924 --> 00:00:06,285
+start a new package with a new file for this lesson.
+
+3
+00:00:06,285 --> 00:00:09,134
+I am calling them both Aquarium5.
+
+4
+00:00:09,134 --> 00:00:13,539
+Create a fish data class with one property for the name.
+
+5
+00:00:13,539 --> 00:00:17,945
+Add a name function that calls fishExamples.
+
+6
+00:00:17,945 --> 00:00:21,560
+Then, add fishExamples and in fishExamples,
+
+7
+00:00:21,559 --> 00:00:24,714
+create a variable fish with a name,
+
+8
+00:00:24,714 --> 00:00:26,484
+let's call it splashy.
+
+9
+00:00:26,484 --> 00:00:29,280
+Writing higher-order functions with extension
+
+10
+00:00:29,280 --> 00:00:33,420
+lambdas is the most advanced part of the Kotlin language.
+
+11
+00:00:33,420 --> 00:00:36,045
+It takes a while to learn how to write them.
+
+12
+00:00:36,045 --> 00:00:39,630
+However, they are really convenient to use.
+
+13
+00:00:39,630 --> 00:00:43,335
+Let's make a simple one to see how this works.
+
+14
+00:00:43,335 --> 00:00:49,015
+We used with in a previous lesson to apply several operations to an object.
+
+15
+00:00:49,015 --> 00:00:53,039
+It looks like this, inside fishExample,
+
+16
+00:00:53,039 --> 00:00:56,004
+we can call with with an object.
+
+17
+00:00:56,005 --> 00:00:58,575
+Then, inside the lambda,
+
+18
+00:00:58,575 --> 00:01:00,290
+between the curly braces,
+
+19
+00:01:00,289 --> 00:01:04,625
+the object is implicitly referenced by the word this.
+
+20
+00:01:04,625 --> 00:01:11,629
+Here we're saying, with fish name, call this.capitalize.
+
+21
+00:01:11,629 --> 00:01:15,714
+We don't actually need the this because it's implicit,
+
+22
+00:01:15,715 --> 00:01:17,210
+so let's remove it.
+
+23
+00:01:17,209 --> 00:01:21,069
+Under the hood, with is a higher order function.
+
+24
+00:01:21,069 --> 00:01:22,784
+To see how this works,
+
+25
+00:01:22,784 --> 00:01:28,254
+we can make our own greatly simplified version of with that just works for strings.
+
+26
+00:01:28,254 --> 00:01:31,209
+To get started, we need to define a function,
+
+27
+00:01:31,209 --> 00:01:34,064
+myWith that takes two arguments.
+
+28
+00:01:34,064 --> 00:01:38,484
+The arguments will be the object on which to execute the operation
+
+29
+00:01:38,484 --> 00:01:43,674
+and a function that defines the operation to execute on the object.
+
+30
+00:01:43,674 --> 00:01:45,804
+So for our example,
+
+31
+00:01:45,805 --> 00:01:48,405
+we create a function, myWith.
+
+32
+00:01:48,405 --> 00:01:51,010
+It takes a string object,
+
+33
+00:01:51,010 --> 00:01:55,215
+we'll call it name because we want to pass in the name of the fish.
+
+34
+00:01:55,215 --> 00:01:59,645
+The second argument is the function definition for the operation.
+
+35
+00:01:59,644 --> 00:02:02,134
+Block is the name of the function.
+
+36
+00:02:02,135 --> 00:02:06,719
+The function needs a name so we can use it in the body of the myWith function.
+
+37
+00:02:06,719 --> 00:02:11,564
+We can call the function anything we want but by convention it's called block.
+
+38
+00:02:11,564 --> 00:02:13,465
+Next, comes a colon.
+
+39
+00:02:13,465 --> 00:02:17,250
+After the colon, we specify the class we are extending,
+
+40
+00:02:17,250 --> 00:02:19,960
+so that we can use myWith on it.
+
+41
+00:02:19,960 --> 00:02:22,385
+We want to use myWith on a string,
+
+42
+00:02:22,384 --> 00:02:24,899
+so we need to extend the string class.
+
+43
+00:02:24,900 --> 00:02:28,950
+The class we are extending is often called the receiver object.
+
+44
+00:02:28,949 --> 00:02:32,780
+Finally, we specify the return type of the function argument,
+
+45
+00:02:32,780 --> 00:02:34,745
+which in this case is unit,
+
+46
+00:02:34,745 --> 00:02:37,150
+since we are not returning anything.
+
+47
+00:02:37,150 --> 00:02:41,719
+So, locally, inside the function body of myWith,
+
+48
+00:02:41,719 --> 00:02:48,530
+block is now an extension function on a string object and we can apply it to a string.
+
+49
+00:02:48,530 --> 00:02:52,995
+So, we can apply the parsed in function to the parsed in argument.
+
+50
+00:02:52,995 --> 00:02:57,189
+We take name and call block on it.
+
+51
+00:02:57,189 --> 00:02:59,794
+Now, in fish example,
+
+52
+00:02:59,794 --> 00:03:04,375
+instead of with, we can replace with with myWith.
+
+53
+00:03:04,375 --> 00:03:09,099
+Fish.name is our name argument and capitalize is
+
+54
+00:03:09,099 --> 00:03:14,229
+our block function and so we are applying capitalized to splashy.
+
+55
+00:03:14,229 --> 00:03:18,489
+Capitalize returns a copy of the past in string,
+
+56
+00:03:18,490 --> 00:03:21,100
+it does not change the original string.
+
+57
+00:03:21,099 --> 00:03:24,609
+So, to see that this is actually happening,
+
+58
+00:03:24,610 --> 00:03:28,705
+we can wrap our curl to capitalize into a print statement.
+
+59
+00:03:28,705 --> 00:03:31,000
+When we execute the code,
+
+60
+00:03:31,000 --> 00:03:34,495
+it prints splashy with a capital s.
+
+61
+00:03:34,495 --> 00:03:41,569
+Now, with is already provided for us in the standard library and it is just one example.
+
+62
+00:03:41,569 --> 00:03:43,840
+There are tons of built in functions in
+
+63
+00:03:43,840 --> 00:03:47,500
+the Kotlin standard library that use extension lambdas.
+
+64
+00:03:47,500 --> 00:03:50,544
+Here is a handful that you'll find useful.
+
+65
+00:03:50,544 --> 00:03:54,189
+Run is an extension that works with all data types.
+
+66
+00:03:54,189 --> 00:04:00,609
+It takes one lambda as its argument and returns the result of executing the lambda.
+
+67
+00:04:00,610 --> 00:04:05,815
+In this example, run will just return the name of the fish.
+
+68
+00:04:05,814 --> 00:04:11,995
+Apply is similar to run and can also be used on all data types.
+
+69
+00:04:11,995 --> 00:04:17,740
+But unlike run which returns the result of the block function,
+
+70
+00:04:17,740 --> 00:04:21,430
+apply returns the object it's applied to.
+
+71
+00:04:21,430 --> 00:04:24,264
+So, if we apply it to fish,
+
+72
+00:04:24,264 --> 00:04:27,305
+it'll return the fish object.
+
+73
+00:04:27,305 --> 00:04:30,610
+It turns out that apply can be really useful for
+
+74
+00:04:30,610 --> 00:04:33,730
+calling functions on a newly created object.
+
+75
+00:04:33,730 --> 00:04:36,730
+Here is an example of using apply.
+
+76
+00:04:36,730 --> 00:04:42,235
+We create a new fish and before we assign it to a variable, we call apply.
+
+77
+00:04:42,235 --> 00:04:45,105
+Then, we apply a lambda to set its name.
+
+78
+00:04:45,105 --> 00:04:49,960
+So, the difference is that run returns the result of executing
+
+79
+00:04:49,959 --> 00:04:55,930
+the lambda while apply returns the object after the lambda has been applied.
+
+80
+00:04:55,930 --> 00:04:59,949
+So, apply returns the fish that we just constructed.
+
+81
+00:04:59,949 --> 00:05:04,074
+This is a really common pattern for initializing objects.
+
+82
+00:05:04,074 --> 00:05:07,000
+Now, there is also let.
+
+83
+00:05:07,000 --> 00:05:10,800
+Let returns a copy of the changed object.
+
+84
+00:05:10,800 --> 00:05:15,480
+Let is particularly useful for chaining manipulations together.
+
+85
+00:05:15,480 --> 00:05:19,855
+Here is an example where we first capitalize fish.
+
+86
+00:05:19,855 --> 00:05:22,689
+Then, add another string to it.
+
+87
+00:05:22,689 --> 00:05:28,579
+Then, get its length at 31 and print the result.
+
+88
+00:05:28,579 --> 00:05:33,399
+You'll find yourself using these functions everywhere in your Kotlin code
+

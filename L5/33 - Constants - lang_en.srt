@@ -1,0 +1,104 @@
+1
+00:00:00,000 --> 00:00:02,384
+Let's talk about constants.
+
+2
+00:00:02,384 --> 00:00:06,330
+In Kotlin, we can make top level constants and assign
+
+3
+00:00:06,330 --> 00:00:10,495
+them a value at compile time using const val.
+
+4
+00:00:10,494 --> 00:00:14,250
+So then we have val and const val,
+
+5
+00:00:14,250 --> 00:00:16,219
+and what is the difference?
+
+6
+00:00:16,219 --> 00:00:19,519
+For both we can assign a value directly,
+
+7
+00:00:19,519 --> 00:00:25,035
+but const val, the value is always determined at compile time.
+
+8
+00:00:25,035 --> 00:00:31,675
+Well, with val, the value that is assigned can be determined during program execution.
+
+9
+00:00:31,675 --> 00:00:35,200
+So, for val we can assign the return value from
+
+10
+00:00:35,200 --> 00:00:40,115
+a function as its value because we can set it during execution.
+
+11
+00:00:40,115 --> 00:00:42,900
+Const val is set at compile time,
+
+12
+00:00:42,899 --> 00:00:47,530
+so we cannot call and execute a function to get its value set.
+
+13
+00:00:47,530 --> 00:00:52,960
+However, const val only works at the top level and in classes
+
+14
+00:00:52,960 --> 00:00:58,539
+declared with object not with regular classes declared with class.
+
+15
+00:00:58,539 --> 00:01:02,710
+So, we can use this to create a file or object that
+
+16
+00:01:02,710 --> 00:01:07,049
+contains only constants and import them one-by-one.
+
+17
+00:01:07,049 --> 00:01:11,500
+Kotlin does not have a concept of class level constants.
+
+18
+00:01:11,500 --> 00:01:14,450
+To define constants inside a class,
+
+19
+00:01:14,450 --> 00:01:18,275
+you have to wrap them into a companion object.
+
+20
+00:01:18,275 --> 00:01:24,145
+The basic difference between companion objects and regular objects is as follows.
+
+21
+00:01:24,144 --> 00:01:30,064
+Companion objects are initialized from the static constructor of the containing class,
+
+22
+00:01:30,064 --> 00:01:34,870
+that is, they are created when the object is created.
+
+23
+00:01:34,870 --> 00:01:40,770
+Plain objects are initialized lazily on the first access to that object,
+
+24
+00:01:40,769 --> 00:01:45,000
+that is, when they are first used.
+
+25
+00:01:45,390 --> 00:01:49,810
+There is more, but all that you need to know is to wrap
+
+26
+00:01:49,810 --> 00:01:54,329
+constants in classes inside a companion object.
+

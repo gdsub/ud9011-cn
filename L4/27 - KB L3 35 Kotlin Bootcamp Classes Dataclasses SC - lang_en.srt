@@ -1,0 +1,160 @@
+1
+00:00:00,000 --> 00:00:03,060
+It's getting crowded, so we are going to put
+
+2
+00:00:03,060 --> 00:00:06,554
+the code for this segment into a new package under
+
+3
+00:00:06,554 --> 00:00:13,890
+aquarium and call it decorations and a new file also called decorations.
+
+4
+00:00:13,890 --> 00:00:19,605
+Now, let's add a main function and a makeDecorations function.
+
+5
+00:00:19,605 --> 00:00:24,480
+Often, we have classes that mostly act as data containers.
+
+6
+00:00:24,480 --> 00:00:28,530
+In Kotlin, for classes that mostly hold data,
+
+7
+00:00:28,530 --> 00:00:31,230
+there is a data class with benefits.
+
+8
+00:00:31,230 --> 00:00:36,105
+Recreate data classes by prefixing arc decoration with data.
+
+9
+00:00:36,104 --> 00:00:37,979
+We can for example,
+
+10
+00:00:37,979 --> 00:00:42,904
+create a class decorations that knows about aquarium decorations.
+
+11
+00:00:42,905 --> 00:00:47,210
+You can then create an instance of this class in
+
+12
+00:00:47,210 --> 00:00:51,785
+makeDecorations and print all its properties.
+
+13
+00:00:51,784 --> 00:00:55,339
+Let's run, just decorations,
+
+14
+00:00:55,340 --> 00:00:59,145
+with a data class printing the object,
+
+15
+00:00:59,145 --> 00:01:01,275
+prints the values of properties,
+
+16
+00:01:01,274 --> 00:01:04,120
+instead of just an address of the object,
+
+17
+00:01:04,120 --> 00:01:06,594
+that is the object pointer.
+
+18
+00:01:06,594 --> 00:01:12,640
+Basically, it creates toString for us to print the properties.
+
+19
+00:01:12,640 --> 00:01:16,769
+Let's create two more decorations in makeDecorations,
+
+20
+00:01:16,769 --> 00:01:22,844
+d2 with slate and d3, also with slate.
+
+21
+00:01:22,844 --> 00:01:29,670
+The data class also provides an equals method to compare two instances of a data class.
+
+22
+00:01:29,670 --> 00:01:37,320
+Let's add two print statements that compare d1 to d2 and d2 to d3.
+
+23
+00:01:37,319 --> 00:01:40,409
+Let's run our code.
+
+24
+00:01:40,409 --> 00:01:45,524
+In the result, when we compare granite and slate,
+
+25
+00:01:45,524 --> 00:01:51,585
+we get false and when we compare slate to slate, we get true.
+
+26
+00:01:51,584 --> 00:01:54,044
+You can copy data objects,
+
+27
+00:01:54,045 --> 00:01:56,040
+using the copy method.
+
+28
+00:01:56,040 --> 00:02:01,094
+This creates a new object with the same property values,
+
+29
+00:02:01,094 --> 00:02:04,844
+so when you print it they are the same.
+
+30
+00:02:04,844 --> 00:02:08,745
+Let's make a data class with some more decorations,
+
+31
+00:02:08,745 --> 00:02:17,099
+we call it decorations2 and add wood and a diver and create another decoration with it.
+
+32
+00:02:17,099 --> 00:02:20,844
+To get at the properties and assign them to variables,
+
+33
+00:02:20,844 --> 00:02:24,594
+Kotlin, let's us use a process called decomposition.
+
+34
+00:02:24,594 --> 00:02:26,875
+We can make three variables,
+
+35
+00:02:26,875 --> 00:02:31,824
+one for each property and assign the object to it.
+
+36
+00:02:31,824 --> 00:02:38,454
+Kotlin puts the property value in each variable and we can then use it.
+
+37
+00:02:38,455 --> 00:02:43,985
+You do need to put parentheses around the variables for decomposition.
+
+38
+00:02:43,985 --> 00:02:49,450
+The number of variables must match the number of properties or you get
+
+39
+00:02:49,449 --> 00:02:52,405
+a compiler error and
+
+40
+00:02:52,405 --> 00:02:57,599
+the variables are assigned in the order in which they are declared in the class.
+
